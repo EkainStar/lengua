@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lengua Castellana y Literatura — Resumen PAU</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --ink: #1a1410;
+    --brown: #6b4226;
+    --rust: #b5451b;
+    --gold: #c9922a;
+    --olive: #5a6e3a;
+    --slate: #3c4a5c;
+    --muted: #7a6e65;
+    --divider: #ddd5c8;
+    --card-bg: #fff;
+    --highlight: #fdf3e7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 70px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 41px
+    );
+  }
+  .cover-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+  }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub {
+    font-size: 17px;
+    color: rgba(250,247,242,0.65);
+    font-weight: 300;
+    font-style: italic;
+  }
+  .cover-toc {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .cover-toc a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    padding: 7px 16px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .cover-toc a:hover { background: rgba(201,146,42,0.25); }
+
+  /* ── LAYOUT ── */
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px 80px;
+  }
+
+  /* ── CHAPTER HEADER ── */
+  .chapter {
+    margin-top: 64px;
+  }
+  .chapter-badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .chapter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 3px solid var(--rust);
+    padding-bottom: 12px;
+    margin-bottom: 26px;
+    line-height: 1.2;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 28px;
+  }
+  .section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--divider);
+  }
+  .section h4 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--slate);
+    margin: 14px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  p { margin-bottom: 10px; }
+
+  /* ── CARDS GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .card-accent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    border-radius: 4px 0 0 4px;
+  }
+  .card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 8px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .card p, .card li { font-size: 14px; line-height: 1.65; }
+  .card ul { padding-left: 16px; }
+  .card ul li { margin-bottom: 3px; }
+  .card .tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: var(--highlight);
+    color: var(--gold);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    font-family: 'Source Serif 4', serif;
+  }
+
+  /* ── POEM CARDS ── */
+  .poem-card {
+    background: var(--card-bg);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .poem-header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .poem-header strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+  }
+  .poem-meta-tag {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(201,146,42,0.3);
+    color: var(--gold);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+  .poem-body {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .poem-body .full { grid-column: 1 / -1; }
+  .poem-field label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .poem-field p { font-size: 14px; margin: 0; }
+
+  /* ── TAG PILLS ── */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .pill {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  .pill-rust { background: #fdf0ec; border-color: #e0956b; color: #8b3a1a; }
+  .pill-olive { background: #f0f4eb; border-color: #8aab5e; color: #3d5120; }
+  .pill-slate { background: #edf1f6; border-color: #7a96b5; color: #2c3d52; }
+  .pill-gold  { background: #fdf5e6; border-color: #d4a84b; color: #7a5a10; }
+
+  /* ── INFO BOXES ── */
+  .info-box {
+    background: var(--highlight);
+    border-left: 4px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 0 4px 4px 0;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  .info-box strong { color: var(--rust); }
+
+  .tip-box {
+    background: #eef4ee;
+    border-left: 4px solid var(--olive);
+    padding: 14px 18px;
+    border-radius: 0 4px 4px 0;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+
+  .warn-box {
+    background: #fdecea;
+    border-left: 4px solid var(--rust);
+    padding: 14px 18px;
+    border-radius: 0 4px 4px 0;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+
+  /* ── TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 14px 0;
+  }
+  th {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: left;
+    padding: 9px 14px;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  td {
+    border: 1px solid var(--divider);
+    padding: 8px 14px;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--cream); }
+
+  /* ── LIST STYLES ── */
+  ul.styled, ol.styled {
+    padding-left: 20px;
+    margin: 8px 0 12px;
+  }
+  ul.styled li, ol.styled li {
+    margin-bottom: 5px;
+    font-size: 14.5px;
+  }
+  ul.styled li strong, ol.styled li strong { color: var(--rust); }
+
+  /* ── PAU QUESTION BLOCKS ── */
+  .pau-block {
+    background: var(--card-bg);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .pau-block-header {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .pau-num {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: white;
+  }
+  .pau-block-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--ink);
+  }
+  .pau-block-body {
+    padding: 4px 20px 18px;
+    font-size: 14px;
+  }
+  .pau-block-body h4 {
+    color: var(--rust);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    margin: 14px 0 6px;
+  }
+
+  /* ── TWO COL ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 10px 0;
+  }
+
+  /* ── DIVIDER ── */
+  hr.fancy {
+    border: none;
+    border-top: 2px solid var(--divider);
+    margin: 40px 0;
+  }
+
+  /* ── PAGE BREAK FEEL ── */
+  .chapter + .chapter { margin-top: 72px; }
+
+  @media (max-width: 640px) {
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 34px; }
+    .wrapper { padding: 0 16px 60px; }
+    .poem-body { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ COVER ═══════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-label">Resumen PAU · Lengua Castellana y Literatura · 2024–25</div>
+  <h1>Literatura <span>&amp;</span><br>Lengua</h1>
+  <p class="cover-sub">Generación del 98 · Machado · Vanguardias · Generación del 27 · Bernarda Alba · Nada · Orientaciones PAU</p>
+  <div class="cover-toc">
+    <a href="#g98">Generación del 98</a>
+    <a href="#machado">Poemas de Machado</a>
+    <a href="#g27">Vanguardias y G.27</a>
+    <a href="#bernarda">Casa de Bernarda Alba</a>
+    <a href="#nada">Nada — Posguerra</a>
+    <a href="#pau">Orientaciones PAU</a>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- ═══════════════════════════════════ 1. GENERACIÓN DEL 98 ═══════════════════════════════════ -->
+<div class="chapter" id="g98">
+  <span class="chapter-badge">Tema 1</span>
+  <h2>Generación del 98</h2>
+
+  <div class="section">
+    <h3>Contexto histórico y crisis</h3>
+    <p>La <strong>crisis del 98</strong> surge de la pérdida de las últimas colonias (Cuba y Filipinas) y de una convulsión profunda en la España del cambio de siglo: reinado de Alfonso XIII, dictadura de Primo de Rivera, la II República y la Guerra Civil. A nivel cultural se produce una <em>«crisis universal de las letras y del espíritu»</em> marcada por:</p>
+    <div class="pill-row">
+      <span class="pill pill-rust">Pérdida de fe en el progreso</span>
+      <span class="pill pill-slate">Crítica al positivismo y pesimismo</span>
+      <span class="pill pill-olive">Crisis religiosa y laicización</span>
+    </div>
+    <div class="info-box">
+      <strong>Dos respuestas literarias paralelas:</strong> el <strong>Modernismo</strong> (talante estético, evasión, belleza formal) y la <strong>Generación del 98</strong> (talante político e ideológico, compromiso crítico con España).
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Rasgos del movimiento</h3>
+    <div class="card-grid">
+      <div class="card"><div class="card-accent" style="background:var(--rust)"></div>
+        <h4>Actitud antiburguesa</h4>
+        <p>Rechazo a los valores acomodaticios de la clase media y al conformismo social reinante.</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--slate)"></div>
+        <h4>Guías filosóficos</h4>
+        <p><strong>Nietzsche</strong> (crítica a la moral establecida) y <strong>Schopenhauer</strong> (pesimismo, voluntad como fuerza vital).</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--gold)"></div>
+        <h4>Temas centrales</h4>
+        <ul><li><strong>España:</strong> decadencia y regeneración del país.</li><li><strong>Existencial:</strong> angustia, búsqueda de sentido, soledad.</li></ul>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--olive)"></div>
+        <h4>Estilo</h4>
+        <p>Importancia de la idea sobre la forma. <strong>Concisión, antiretórica</strong>, subjetivismo en la descripción de paisajes como proyección interior.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Autores principales</h3>
+    <div class="card-grid">
+
+      <div class="card"><div class="card-accent" style="background:var(--rust)"></div>
+        <span class="tag">Narrativa y poesía</span>
+        <h4>Antonio Machado</h4>
+        <ul class="styled">
+          <li>Nació en Sevilla; murió exiliado en Colliure (Francia).</li>
+          <li><em>Soledades, galerías y otros poemas</em> (1907): etapa modernista, intimismo, símbolos del tiempo y la muerte.</li>
+          <li><em>Campos de Castilla</em> (1912): preocupación por España, elegías a Leonor, crítica regeneracionista.</li>
+          <li>Temas: tiempo, soledad, amor evocado, Dios, España.</li>
+          <li>Estilo: símbolos (tarde, agua, camino), sencillez formal, alejandrinos, silva-romance.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--slate)"></div>
+        <span class="tag">Narrativa y ensayo</span>
+        <h4>Miguel de Unamuno</h4>
+        <ul class="styled">
+          <li>El más peculiar e inclasificable del 98.</li>
+          <li>Temas: angustia existencial, falta de fe, inmortalidad.</li>
+          <li>Obras clave: <em>Niebla</em> (novela, «nivola»), <em>San Manuel Bueno, mártir</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--gold)"></div>
+        <span class="tag">Narrativa</span>
+        <h4>Pío Baroja</h4>
+        <ul class="styled">
+          <li>Dejó la medicina para dedicarse a la literatura.</li>
+          <li>Solo narrativa; estilo ágil, pesimismo vital.</li>
+          <li>Obra clave: <em>El árbol de la ciencia</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--olive)"></div>
+        <span class="tag">Ensayo y novela</span>
+        <h4>Azorín</h4>
+        <ul class="styled">
+          <li>Sencillez, claridad y brevedad como rasgos de estilo.</li>
+          <li>Obras: <em>La voluntad</em>, <em>Antonio Azorín</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--brown)"></div>
+        <span class="tag">Teatro y narrativa</span>
+        <h4>Valle-Inclán</h4>
+        <ul class="styled">
+          <li>Vinculado a Galicia; influencia modernista en sus inicios.</li>
+          <li>Obra modernista: <em>Las cuatro sonatas</em>.</li>
+          <li>Crea el <strong>esperpento</strong>: deformación grotesca de la realidad.</li>
+          <li>Obra esperpéntica clave: <em>Luces de bohemia</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--muted)"></div>
+        <span class="tag">Ensayo</span>
+        <h4>Ramiro de Maeztu</h4>
+        <ul class="styled">
+          <li>Tesis regeneracionista; postura progresista.</li>
+          <li>Obra: <em>Hacia otra España</em>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="fancy">
+
+<!-- ═══════════════════════════════════ 2. POEMAS MACHADO ═══════════════════════════════════ -->
+<div class="chapter" id="machado">
+  <span class="chapter-badge">Tema 2</span>
+  <h2>Poemas de Antonio Machado</h2>
+  <div class="info-box">
+    Los poemas proceden de <strong>dos libros fundamentales</strong>: <em>Soledades, galerías y otros poemas</em> (1907, etapa modernista/existencial) y <em>Campos de Castilla</em> (1912–17, etapa noventayochista). Cada poema combina simbolismo, paisaje subjetivo y reflexión filosófica.
+  </div>
+
+  <!-- Poema 1 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>1. Yo voy soñando caminos</strong>
+      <span class="poem-meta-tag">Soledades</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Soledades, galerías y otros poemas</em> (1907)</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>2 redondillas (abba) + 4 cuartetas (abab); octosílabos, rima consonante.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Soledad del poeta tras desprenderse de una pasión amorosa.</strong> Camina al atardecer y reflexiona sobre una pasión pasada que ya no duele pero cuya ausencia le angustia; desea recuperarla para llenar el vacío emocional.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Símbolos clave: <em>camino</em> (vida), <em>tarde</em> (melancolía), <em>sueño</em> (ensimismamiento). Metáfora «espina dorada» (pasión dolorosa). Encabalgamientos, paralelismos.</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 2 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>2. El mañana efímero</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em></p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>Silva (heptasílabos y endecasílabos), rima consonante aleatoria.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Contraste entre la España inmovilista y una España emergente.</strong> Critica la España vacía, viciosa y tradicional (charanga, pandereta) y anticipa una nueva España trabajadora y renovada que trae esperanza real.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Alusiones (Frascuelo, María), enumeraciones y polisíndeton, metáforas (cincel y maza = trabajo), antítesis ayer/mañana, personificación «España nace».</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 3 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>3. Noche de verano (Es una hermosa noche…)</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em> (CXI)</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>Silva romance (arromanzada): 12 versos endecasílabos y heptasílabos, rima asonante en pares.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Soledad del poeta en una noche estival.</strong> Describe una plaza nocturna en un viejo pueblo castellano; el poeta pasea solo, «como un fantasma», ajeno a la vida que le rodea.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Enumeraciones descriptivas, epítetos («altas casas», «viejo pueblo»), antítesis negras sombras/arena blanca, símil «como un fantasma», personificación, encabalgamientos.</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 4 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>4. Al olmo seco</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em> — poemas a Leonor enferma</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>Silva: 30 versos endecasílabos y heptasílabos; rima consonante libre, algunos sueltos.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Esperanza ante la enfermedad de Leonor.</strong> Describe un olmo viejo, podrido, del que brota una rama verde; el poeta quiere anotar ese milagro. La rama verde simboliza la esperanza de curación de su esposa.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Símbolo central: olmo = Leonor enferma; rama verde = esperanza. Epítetos acumulados (viejo, podrido, amarillento). Exclamación «¡El olmo centenario!», personificación.</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 5 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>5. Soñé que tú me llevabas</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em> — elegías a Leonor fallecida</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>3 estrofas (dos de 6 vv., una de 4); octosílabos, rima asonante en pares. Romance con separación estrófica.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Esperanza en la continuidad tras la muerte.</strong> Sueña que pasea con Leonor por un paisaje hermoso; el sueño parece tan real que le invita a creer que no todo acaba con la muerte.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Epítetos («blanca vereda», «montes azules»), apóstrofe directo a Leonor, hipérbole («voz de niña»), símil («como campana nueva»), exclamación «¡Vive, esperanza!».</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 6 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>6. Retrato</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em> (1912)</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>9 cuartetas; endecasílabos, rima consonante abab.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Autorretrato vital y poético.</strong> Recorre su vida (infancia en Sevilla, Castilla), sus amores, su rechazo a modas y artificios, su filantropía y sencillez. Culmina con su visión de la muerte como partida ligera.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Apóstrofe («converso con el hombre»), interrogaciones retóricas («¿Soy clásico o romántico?»), metáforas literarias (flechas de Cupido, rosas de Ronsard), paralelismos.</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 7 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>7. A orillas del Duero</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em> (1912)</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>76 versos alejandrinos en pareados con rima consonante.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Decadencia de Castilla.</strong> El poeta sube a un cerro en verano, contempla el paisaje épico del Duero y critica el contraste entre el esplendor histórico de Castilla y su miseria presente; regresa al atardecer con tristeza.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Apóstrofe («¡Oh tierra triste y noble!»), contrastes pasado/presente, símbolos río = vida y mar = muerte, estribillo «Castilla miserable…», metáforas épicas, enumeraciones.</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 8 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>8. Una noche de verano (muerte de Leonor)</strong>
+      <span class="poem-meta-tag">Campos de Castilla</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Campos de Castilla</em></p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>Romance: 4 estrofas de 4 vv. octosílabos, rima asonante -a-a.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>La muerte y la pérdida de Leonor.</strong> La muerte entra en la casa, se acerca a Leonor y rompe el hilo vital que los une. El poeta queda herido de dolor e impotente.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Personificación de la muerte (entra, se acerca, rompe), anáfora («la muerte»), metáfora del hilo como vínculo amoroso, encabalgamientos, exclamación «¡Ay…!».</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 9 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>9. Proverbios y cantares (selección)</strong>
+      <span class="poem-meta-tag">Nuevas canciones</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Nuevas canciones</em> (1924) — etapa filosófica</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>Soleás: 3 vv. octosílabos, rima asonante 1.º y 3.º.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Reflexiones filosóficas condensadas</strong> (apariencia vs. esencia, complejidad humana, paso del tiempo, individualismo, búsqueda de verdad objetiva). Cada proverbio es una meditación independiente, inspirada en la copla popular.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Estilo sencillo y popular, apóstrofes, simbolismo (brevas/piedra), elipsis, tono coloquial con profundidad filosófica. Abandona el lirismo por la máxima.</p></div>
+    </div>
+  </div>
+
+  <!-- Poema 10 -->
+  <div class="poem-card">
+    <div class="poem-header">
+      <strong>10. El crimen fue en Granada</strong>
+      <span class="poem-meta-tag">Poesías de guerra</span>
+    </div>
+    <div class="poem-body">
+      <div class="poem-field"><label>Libro</label><p><em>Poesías de guerra</em> (Guerra Civil) — elegía a Lorca</p></div>
+      <div class="poem-field"><label>Estrofa / Métrica</label><p>Octosílabos variables; rima asonante/consonante irregular; tres partes diferenciadas.</p></div>
+      <div class="poem-field full"><label>Tema y contenido</label><p><strong>Muerte de Federico García Lorca y llamada a la memoria.</strong> Tres movimientos: el fusilamiento al amanecer (I), diálogo poético entre Lorca y la muerte (II), llamada a erigir un túmulo en la Alhambra (III). Refleja el horror de la guerra y el compromiso republicano de Machado.</p></div>
+      <div class="poem-field full"><label>Recursos destacados</label><p>Personificación de la muerte, repetición anafórica «se le vio», exclamaciones (¡pobre Granada!), metáforas (sangre en frente, plomo en entrañas), diálogo directo.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="fancy">
+
+<!-- ═══════════════════════════════════ 3. VANGUARDIAS Y G.27 ═══════════════════════════════════ -->
+<div class="chapter" id="g27">
+  <span class="chapter-badge">Tema 3</span>
+  <h2>Vanguardias y Generación del 27</h2>
+
+  <div class="section">
+    <h3>I. Las vanguardias europeas</h3>
+    <p>Movimientos artísticos del primer tercio del siglo XX que proponen una <strong>ruptura radical con la tradición</strong>, motivada por la crisis histórica y espiritual (I Guerra Mundial, avances científicos, pérdida de valores estables). El arte deja de imitar la realidad para <em>crear una nueva realidad</em>.</p>
+    <h4>Rasgos generales</h4>
+    <div class="pill-row">
+      <span class="pill pill-rust">Ruptura con el pasado artístico</span>
+      <span class="pill pill-slate">Búsqueda constante de originalidad</span>
+      <span class="pill pill-olive">Promulgación de manifiestos</span>
+      <span class="pill pill-gold">Sentido lúdico del arte</span>
+      <span class="pill pill-rust">Incitación al escándalo</span>
+    </div>
+
+    <table>
+      <tr><th>Movimiento</th><th>Origen / figura</th><th>Características clave</th></tr>
+      <tr><td><strong>Futurismo</strong></td><td>Italia — Marinetti</td><td>Pasión por la velocidad y el progreso; supresión de puntuación; alteración del orden lineal. Influye en Salinas y Alberti.</td></tr>
+      <tr><td><strong>Expresionismo</strong></td><td>Alemania</td><td>Crítica social, denuncia, imaginación y sueño. Ligado a Valle-Inclán (esperpento).</td></tr>
+      <tr><td><strong>Cubismo</strong></td><td>España — Picasso</td><td>Mostrar distintos aspectos de la realidad simultáneamente. Caligramas (Apollinaire, Guillermo de Torre).</td></tr>
+      <tr><td><strong>Dadaísmo</strong></td><td>Rumanía — Tzara</td><td>Destruir todo lo anterior, empezar de cero, humor y ridiculización.</td></tr>
+      <tr><td><strong>Surrealismo</strong></td><td>Francia — Breton, Aragon</td><td>Exploración del subconsciente y lo onírico (influencia de Freud). Escritura automática, versículos. <strong>Mayor impacto en la literatura española.</strong></td></tr>
+    </table>
+
+    <h4>Vanguardias españolas</h4>
+    <div class="two-col">
+      <div class="info-box"><strong>Creacionismo</strong> (Gerardo Diego): creación de lenguaje nuevo mediante metáforas y juegos fónicos, eliminación de lo accesorio.</div>
+      <div class="info-box"><strong>Ultraísmo</strong> (Ramón Gómez de la Serna): engloba todo lo nuevo, centralidad de la metáfora, arte deshumanizado.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>II. La Generación del 27</h3>
+    <p>Grupo de poetas españoles que logra la <strong>síntesis perfecta entre tradición literaria española y vanguardias europeas</strong>, combinando rigor formal, innovación estética y progresiva rehumanización.</p>
+
+    <h4>Origen y cohesión</h4>
+    <ul class="styled">
+      <li>Año simbólico <strong>1927</strong>: homenaje a Góngora en su tricentenario.</li>
+      <li>Formación intelectual semejante; no hubo un único líder.</li>
+      <li>No se alzaron contra la generación anterior; pluralidad de estilos bajo sensibilidad común.</li>
+    </ul>
+
+    <h4>Rasgos estéticos comunes</h4>
+    <div class="pill-row">
+      <span class="pill pill-rust">Equilibrio sentimiento / razón</span>
+      <span class="pill pill-slate">Tradición + vanguardia</span>
+      <span class="pill pill-olive">Lo culto + lo popular</span>
+      <span class="pill pill-gold">Ingenio y trabajo formal</span>
+    </div>
+
+    <h4>Etapas</h4>
+    <table>
+      <tr><th>Etapa</th><th>Período</th><th>Características</th></tr>
+      <tr><td><strong>Inicial</strong></td><td>hasta 1927</td><td>Influencia de Bécquer, modernismo y vanguardias. Predominio de la poesía pura (deshumanización).</td></tr>
+      <tr><td><strong>Intermedia</strong></td><td>1927–1936</td><td>Rehumanización progresiva. Amor, inquietudes existenciales, compromiso social.</td></tr>
+      <tr><td><strong>Final</strong></td><td>desde 1936</td><td>Disolución: Lorca fusilado (1936), la mayoría al exilio. En el exilio: nostalgia de la patria perdida. En España: cuestiones existenciales.</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3>III. Autores de la Generación del 27</h3>
+    <div class="card-grid">
+
+      <div class="card"><div class="card-accent" style="background:var(--rust)"></div>
+        <span class="tag">Madrid · exilio</span>
+        <h4>Pedro Salinas</h4>
+        <ul class="styled">
+          <li>Tema predominante: <strong>el amor</strong>.</li>
+          <li>Lenguaje sencillo, sin rima, búsqueda de la esencia.</li>
+          <li>Obras: <em>Presagios</em>, <em>La voz a ti debida</em> (amor), <em>Confianza</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--slate)"></div>
+        <span class="tag">Valladolid · exilio · Premio Cervantes</span>
+        <h4>Jorge Guillén</h4>
+        <ul class="styled">
+          <li>Satisfacción ante la realidad; luego infortunios históricos.</li>
+          <li>Poesía pura, lenguaje elaborado, estrofas clásicas.</li>
+          <li>Obra unitaria: <em>Aire nuestro</em> (Cántico, Clamor, Homenaje…).</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--gold)"></div>
+        <span class="tag">Santander · Premio Cervantes</span>
+        <h4>Gerardo Diego</h4>
+        <ul class="styled">
+          <li>Gran variedad técnica, estilística y temática.</li>
+          <li>Dominio perfecto de recursos retóricos.</li>
+          <li>Obras: <em>El romancero de la novia</em>, <em>Manual de espumas</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--olive)"></div>
+        <span class="tag">Madrid · RAE · Premio Cervantes</span>
+        <h4>Dámaso Alonso</h4>
+        <ul class="styled">
+          <li>Evolución de poesía pura a <strong>poesía existencial</strong>.</li>
+          <li>Angustia, sufrimiento, interrogación religiosa.</li>
+          <li>Obra clave: <em>Hijos de la ira</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--brown)"></div>
+        <span class="tag">Sevilla · RAE · Premio Nobel</span>
+        <h4>Vicente Aleixandre</h4>
+        <ul class="styled">
+          <li>Unión de <strong>amor y muerte</strong>; surrealismo.</li>
+          <li>Evolución: vanguardia → metafísica existencial.</li>
+          <li>Obra: <em>La destrucción o el amor</em>.</li>
+          <li>Recursos: metáforas, símbolos, versículos, repeticiones.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:#b5451b"></div>
+        <span class="tag">Granada · fusilado 1936</span>
+        <h4>Federico García Lorca</h4>
+        <ul class="styled">
+          <li>Poesía: equilibrio popular/culto, humano/puro.</li>
+          <li>Poesía: <em>Canciones</em>, <em>Romancero gitano</em>, <em>Poeta en Nueva York</em>, <em>Sonetos del amor oscuro</em>.</li>
+          <li>Teatro: valor universal; mezcla vanguardia y tradición; protagonista femenina (libertad vs. autoridad).</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--slate)"></div>
+        <span class="tag">Sevilla · exilio · docente</span>
+        <h4>Luis Cernuda</h4>
+        <ul class="styled">
+          <li>Conflicto central: <strong>realidad vs. deseo</strong>.</li>
+          <li>Obra unitaria: <em>La realidad y el deseo</em>.</li>
+          <li>Rechazo a la rima marcada y al lenguaje sobrecargado; estilo propio.</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--gold)"></div>
+        <span class="tag">Cádiz · exilio · Premio Cervantes</span>
+        <h4>Rafael Alberti</h4>
+        <ul class="styled">
+          <li>Gran variedad de tonos, estilos y temas (nostalgia de la tierra).</li>
+          <li>Etapas: neopopular (<em>Marinero en tierra</em>), barroca (<em>Cal y canto</em>), comprometida (<em>Elegía cívica</em>).</li>
+        </ul>
+      </div>
+
+      <div class="card"><div class="card-accent" style="background:var(--olive)"></div>
+        <span class="tag">Chile · Premio Nobel 1971</span>
+        <h4>Pablo Neruda</h4>
+        <ul class="styled">
+          <li>Amigo de la generación; no español pero ligado a ella.</li>
+          <li>Temas: romanticismo, mundo americano, autobiografía.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="fancy">
+
+<!-- ═══════════════════════════════════ 4. BERNARDA ALBA ═══════════════════════════════════ -->
+<div class="chapter" id="bernarda">
+  <span class="chapter-badge">Tema 4</span>
+  <h2>La casa de Bernarda Alba — García Lorca</h2>
+
+  <div class="two-col">
+    <div class="section">
+      <h3>Argumento en síntesis</h3>
+      <p>Bernarda impone <strong>ocho años de luto</strong> tras la muerte de su segundo marido. Angustias (heredera) es pretendida por Pepe el Romano. Adela y Martirio también se enamoran de él; Adela se ve en secreto con Pepe. Martirio delata a su hermana, Bernarda dispara a Pepe en su huida, Adela cree que ha muerto y <strong>se suicida</strong>.</p>
+    </div>
+    <div class="section">
+      <h3>Estructura</h3>
+      <p>Tres actos sin división escénica explícita; transcurren en <strong>un solo día</strong> de verano:</p>
+      <ul class="styled">
+        <li><strong>Acto I</strong> (mañana): presentación y caracterización de personajes.</li>
+        <li><strong>Acto II</strong> (siesta, 3 h): pasiones, rivalidades, enfrentamientos.</li>
+        <li><strong>Acto III</strong> (noche): estallido trágico, rebelión y suicidio de Adela.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Temas</h3>
+    <div class="pill-row">
+      <span class="pill pill-rust">Amor frustrado</span>
+      <span class="pill pill-rust">Deseo vs. realidad</span>
+      <span class="pill pill-rust">Autoridad vs. libertad</span>
+      <span class="pill pill-slate">Hipocresía y apariencias</span>
+      <span class="pill pill-slate">Marginación de la mujer</span>
+      <span class="pill pill-slate">Honra y honor social</span>
+      <span class="pill pill-olive">Injusticia social</span>
+      <span class="pill pill-olive">Odio y envidia</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Personajes</h3>
+    <div class="card-grid">
+      <div class="card"><div class="card-accent" style="background:var(--ink)"></div>
+        <h4>Bernarda (60 años)</h4>
+        <p>Figura tiránica y autoritaria. Su bastón de mando simboliza el poder. Obsesionada con el honor y las apariencias; incapaz de mostrar amor. Representa la sociedad patriarcal petrificada. Abre y cierra la obra con «¡Silencio!».</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:#c9922a"></div>
+        <h4>Adela (20 años)</h4>
+        <p>La más joven y hermosa. Encarna la rebeldía y el deseo de libertad. Rompe el bastón de Bernarda, pero cambia una sumisión por otra («en mí no manda nadie más que Pepe»). Acaba suicidándose.</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--rust)"></div>
+        <h4>Martirio (24 años)</h4>
+        <p>Acomplejada, envidiosa, enamorada de Pepe en secreto. Delata a Adela por celos. Su vida es sufrimiento continuo (su propio nombre lo indica).</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--muted)"></div>
+        <h4>Angustias (39 años)</h4>
+        <p>Primogénita heredera; su relación con Pepe es puro matrimonio de conveniencia. Apagada, mayor, con poca gracia.</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--slate)"></div>
+        <h4>La Poncia (60 años)</h4>
+        <p>Gobernanta criada desde niña. Equivalente a Poncio Pilatos: conoce todo pero «se lava las manos». Confidente y espía de Bernarda; advierte del peligro pero no actúa.</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--olive)"></div>
+        <h4>María Josefa (80 años)</h4>
+        <p>Abuela demente, encerrada bajo llave. Escapa para hablar de amor y matrimonio. Presagia la tragedia con lucidez: «Pepe el Romano os va a devorar».</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--brown)"></div>
+        <h4>Pepe el Romano</h4>
+        <p>Nunca aparece en escena (solo en ventanas). Encarna el falso amor: prometido a Angustias, amante de Adela. Su presencia es omnipresente aunque ausente.</p>
+      </div>
+      <div class="card"><div class="card-accent" style="background:var(--muted)"></div>
+        <h4>Magdalena / Amelia</h4>
+        <p><strong>Magdalena</strong> (30 a.): la más reflexiva, llora al padre. <strong>Amelia</strong> (27 a.): la más asustadiza y dulce.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Simbolismo y espacio</h3>
+    <div class="two-col">
+      <div>
+        <h4>Espacio</h4>
+        <ul class="styled">
+          <li><strong>Casa blanca</strong>: apariencia de pureza que encierra opresión.</li>
+          <li><strong>Interior vs. exterior</strong>: encierro vs. libertad.</li>
+          <li>La única salida es la locura (Mª Josefa) o la muerte (Adela).</li>
+          <li>Respeta las <strong>tres unidades</strong> clásicas (tiempo, espacio, acción).</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Símbolos clave</h4>
+        <ul class="styled">
+          <li><strong>Bastón:</strong> poder y ceguera voluntaria de Bernarda.</li>
+          <li><strong>Caballo garañón:</strong> pasión sexual, Pepe el Romano.</li>
+          <li><strong>Agua estancada/pozos:</strong> muerte. Agua fluyente: vida y erotismo.</li>
+          <li><strong>Flores:</strong> amor y pasión. <strong>Verde:</strong> rebeldía (Adela). <strong>Negro:</strong> muerte/prisión. <strong>Blanco:</strong> honra/libertad.</li>
+          <li><strong>Luna:</strong> muerte y erotismo. <strong>Sol:</strong> vida.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Mensajes y trasfondo ideológico</h3>
+    <div class="info-box">
+      <strong>Más allá de la trama:</strong> Lorca construye una <strong>crítica feroz al patriarcado y la España conservadora</strong>. Las mujeres son víctimas y verdugos al mismo tiempo —resultado del sistema que las oprime. Bernarda encarna los valores anquilosados de una sociedad que sacrifica la vida y el deseo en nombre del honor y la apariencia. Adela es la naturaleza que se rebela, pero el sistema la destruye antes de que pueda liberarse. La obra evidencia la <em>tragedia del ser humano moderno</em>: la existencia en soledad, sin salida posible.
+    </div>
+    <p>El <strong>lenguaje</strong> oscila entre lo coloquial (insultos, vulgarismos, refranes) y lo poético (metáforas hiperbólicas, imágenes surrealistas de Mª Josefa). Los imperativos de Bernarda y Adela y los vulgarismos de la Poncia definen a cada personaje.</p>
+  </div>
+</div>
+
+<hr class="fancy">
+
+<!-- ═══════════════════════════════════ 5. NADA / POSGUERRA ═══════════════════════════════════ -->
+<div class="chapter" id="nada">
+  <span class="chapter-badge">Tema 5</span>
+  <h2>Nada — Carmen Laforet &amp; Literatura de Posguerra</h2>
+
+  <div class="section">
+    <h3>Contexto: literatura española 1939–1975</h3>
+    <p>La Guerra Civil (1936–39) supone una ruptura profunda. El panorama literario queda condicionado por: <strong>aislamiento y censura</strong> (plácet eclesial y político para cualquier obra), <strong>desaparición de los modelos</strong> (la G.27 se dispersa: Lorca fusilado, la mayoría al exilio), <strong>escasez editorial</strong> y <strong>tendencias escapistas o de exaltación</strong>.</p>
+
+    <table>
+      <tr><th>Década</th><th>Corriente</th><th>Obras clave</th></tr>
+      <tr><td><strong>Años 40</strong></td><td>Tremendismo + existencialismo. Visión cruda de la realidad; ambientes sórdidos.</td><td><em>La familia de Pascual Duarte</em> (Cela, 1942), <em>Nada</em> (Laforet, 1945), <em>La sombra del ciprés</em> (Delibes).</td></tr>
+      <tr><td><strong>Años 50</strong></td><td>Realismo social / objetivismo. Testimonio y denuncia; narrador como «cámara».</td><td><em>La colmena</em> (Cela), <em>El Jarama</em> (Sánchez Ferlosio), obras de Matute, Marsé, Goytisolo.</td></tr>
+      <tr><td><strong>Años 60</strong></td><td>Novela experimental. Ruptura con el realismo; técnicas innovadoras, Boom hispanoamericano.</td><td><em>Tiempo de silencio</em> (Martín Santos, 1962), García Márquez, Cortázar, Borges.</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3>Carmen Laforet — Vida</h3>
+    <p>Nació en Barcelona (1921), creció en Las Palmas. Su madre murió cuando tenía 11 años. En 1939 regresa a Barcelona, a casa de sus abuelos en la <strong>calle Aribau</strong> —escenario de <em>Nada</em>. Escribió la novela a los 22 años; ganó el <strong>primer Premio Nadal</strong> (1944) y el Premio Fastenrath de la RAE (1948). Murió en Madrid en 2004 tras una enfermedad degenerativa. Obra posterior: <em>La isla y los demonios</em>, <em>La mujer nueva</em> (Premio Nacional, 1956), <em>La insolación</em>.</p>
+  </div>
+
+  <div class="section">
+    <h3>Análisis de Nada (1945)</h3>
+    <div class="two-col">
+      <div>
+        <h4>Argumento</h4>
+        <p>Andrea llega a Barcelona para estudiar Filosofía y Letras, se instala con sus abuelos en la decadente calle Aribau. Convive con personajes desequilibrados, entabla amistades universitarias (Ena, Pons). El tío Román —figura oscura y manipuladora— acaba suicidándose. Andrea parte a Madrid al terminar el curso. Es una <strong>novela de aprendizaje (bildungsroman)</strong>.</p>
+        <h4>Estructura</h4>
+        <ul class="styled">
+          <li><strong>1.ª parte</strong> (oct.–feb.): vida en Aribau; ambiente opresivo.</li>
+          <li><strong>2.ª parte</strong> (mar.–jun.): apertura al exterior; universidad; tensiones.</li>
+          <li><strong>3.ª parte</strong> (jul.–sep.): resolución; pasado de Román revelado; suicidio; marcha de Andrea.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Temas</h4>
+        <ul class="styled">
+          <li><strong>Búsqueda de libertad y emancipación femenina</strong> (tema central).</li>
+          <li>Lucha contra los patrones sociales; rechazo al matrimonio como destino.</li>
+          <li>Violencia doméstica y tiranía psicológica.</li>
+          <li>La Guerra Civil como trauma colectivo.</li>
+          <li>La amistad como salvación frente al entorno hostil.</li>
+        </ul>
+        <h4>Narrador</h4>
+        <p>Narrador homodiegético en 1.ª persona: Andrea narra desde un punto posterior, con distancia reflexiva. Actúa como observadora pasiva («la chica rara»).</p>
+      </div>
+    </div>
+
+    <h4>Espacio</h4>
+    <div class="pill-row">
+      <span class="pill pill-rust">Casa Aribau = opresión y frustración</span>
+      <span class="pill pill-olive">Universidad / calle = libertad y esperanza</span>
+    </div>
+
+    <h4>Estilo y técnica</h4>
+    <p>Prosa sencilla y sobria en diálogos. Combina <strong>impresionismo</strong> (percepción subjetiva de Andrea) y <strong>expresionismo</strong> (deformación animalizada de personajes antipáticos). Abundan sinestesias, personificaciones y comparaciones. La novela elude algunas intrigas sin resolver del todo (<em>elusión narrativa</em>), lo que mantiene la tensión.</p>
+    <div class="info-box">
+      <strong>Influencia del título:</strong> procede de Juan Ramón Jiménez, de quien también se toma la cita inicial. La «nada» alude tanto al vacío moral del entorno como a lo que Andrea acaba por llevarse de su estancia en Barcelona.
+    </div>
+  </div>
+</div>
+
+<hr class="fancy">
+
+<!-- ═══════════════════════════════════ 6. ORIENTACIONES PAU ═══════════════════════════════════ -->
+<div class="chapter" id="pau">
+  <span class="chapter-badge">Tema 6</span>
+  <h2>Orientaciones PAU — Cómo responder cada pregunta</h2>
+
+  <div class="info-box" style="margin-bottom:26px">
+    El examen se divide en <strong>Bloque A: Comunicación Escrita (4 p.)</strong> y <strong>Bloque B: Conocimiento de la Lengua (3 p.)</strong>. La obra literaria suma 3 p. adicionales. Total: 10 p.
+  </div>
+
+  <!-- BLOQUE A -->
+  <div class="section">
+    <h3>Bloque A — Comunicación Escrita</h3>
+
+    <div class="pau-block">
+      <div class="pau-block-header" style="background:#fdf0ec">
+        <div class="pau-num" style="background:var(--rust)">A.1</div>
+        <h3>Comprensión del texto (2 puntos)</h3>
+      </div>
+      <div class="pau-block-body">
+        <p>Dos cuestiones: una abierta y una cerrada. Posibles tipos: resumen, tema, identificar ideas V/F, titular párrafos.</p>
+
+        <h4>Cómo hacer el resumen</h4>
+        <ul class="styled">
+          <li>Recoge el <strong>contenido global</strong>, no solo una parte.</li>
+          <li>Un único párrafo cohesionado, sin valoraciones personales ni primera persona.</li>
+          <li>Entre <strong>8 y 10 líneas</strong>. Reduce cada párrafo a una idea; engloba ideas similares.</li>
+          <li>No copies frases literales; no incluyas detalles ni cifras irrelevantes.</li>
+        </ul>
+
+        <h4>Cómo formular el tema</h4>
+        <ul class="styled">
+          <li>Frase nominal breve (<strong>máximo ~10 palabras</strong>). No es un resumen.</li>
+          <li>Sustantivo abstracto + complemento. Sin valoraciones propias ni fórmulas del tipo «El texto trata de…».</li>
+          <li>Recoge la intención comunicativa, no solo el asunto superficial.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pau-block">
+      <div class="pau-block-header" style="background:#eef4ee">
+        <div class="pau-num" style="background:var(--olive)">A.2</div>
+        <h3>Producción: texto de opinión (2 puntos)</h3>
+      </div>
+      <div class="pau-block-body">
+        <p><strong>~25 líneas / 220–250 palabras.</strong> Argumenta a favor o en contra del tema del texto.</p>
+        <h4>Claves de redacción</h4>
+        <ul class="styled">
+          <li>Haz un esquema previo de ideas antes de escribir.</li>
+          <li>Estructura clara en párrafos equilibrados; introducción, desarrollo y conclusión.</li>
+          <li>Combina 1.ª persona (singular o plural) con 3.ª para no resultar agresivo.</li>
+          <li>Sintaxis sencilla; frases de menos de 30 palabras.</li>
+          <li>Léxico adecuado, sin coloquialismos. Evita «palabras baúl».</li>
+          <li>No repitas ideas ni pierdas el hilo conductor.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOQUE B -->
+  <div class="section">
+    <h3>Bloque B — Conocimiento de la Lengua (3 puntos)</h3>
+    <p>Tres cuestiones: B.1 (léxico, 1 p.) + B.2 dos cuestiones conceptuales (2 p.).</p>
+
+    <div class="pau-block">
+      <div class="pau-block-header" style="background:#fdf5e6">
+        <div class="pau-num" style="background:var(--gold)">B.1</div>
+        <h3>Léxico del texto (1 punto)</h3>
+      </div>
+      <div class="pau-block-body">
+        <p>Posibles tareas: identificar definiciones, explicar el sentido connotativo de un término, interpretar frases hechas o expresiones del texto. <strong>Clave: precisión y apoyo en el contexto.</strong></p>
+      </div>
+    </div>
+
+    <div class="pau-block">
+      <div class="pau-block-header" style="background:#edf1f6">
+        <div class="pau-num" style="background:var(--slate)">B.2</div>
+        <h3>Contenidos conceptuales (2 puntos)</h3>
+      </div>
+      <div class="pau-block-body">
+
+        <h4>1. Modalización</h4>
+        <p>Define brevemente la <strong>modalización</strong> (presencia del autor/enunciador en su enunciado; toma de posición subjetiva). En textos argumentativos predomina la <strong>modalización valorativa</strong>. Selecciona 2–3 procedimientos y ejemplifica:</p>
+        <ul class="styled">
+          <li><strong>Modos verbales:</strong> indicativo (certeza), subjuntivo/imperativo (duda, mandato).</li>
+          <li><strong>Perífrasis modales:</strong> <em>tener que, deber…</em></li>
+          <li><strong>Modalidad oracional:</strong> enunciativa, interrogativa retórica, exclamativa, imperativa.</li>
+          <li><strong>1.ª persona verbal:</strong> implicación del autor.</li>
+          <li><strong>Selección léxica:</strong> adjetivos, sustantivos, adverbios con carga positiva o negativa.</li>
+          <li><strong>Adverbios de certeza/duda:</strong> <em>evidentemente, quizás, probablemente…</em></li>
+          <li><strong>Figuras retóricas:</strong> ironía, metáfora, símil.</li>
+          <li><strong>Signos de puntuación expresivos:</strong> comillas, puntos suspensivos (distancia o énfasis).</li>
+        </ul>
+        <div class="tip-box">Comenta siempre los procedimientos <strong>en relación con el significado global</strong> del texto. No hagas un listado sin explicación.</div>
+
+        <h4>2. Registro</h4>
+        <p>El registro es un <strong>continuum</strong> (no es estático). En los textos habituales de Selectividad suele ser:</p>
+        <ul class="styled">
+          <li><strong>Planificado</strong> (escrito, pensado previamente).</li>
+          <li><strong>Formal</strong>, pero con rasgos informales buscados conscientemente para acercarse al lector.</li>
+          <li><strong>No especializado</strong> (dirigido a un público amplio, aunque puede incluir términos cultos).</li>
+        </ul>
+        <p>Apoya con ejemplos del texto en los planos: <em>sintáctico</em> (complejidad, tipos de oración), <em>léxico</em> (cultismos, coloquialismos, tecnicismos) y <em>uso de recursos estilísticos</em>.</p>
+
+        <h4>3. Procedimientos de cohesión</h4>
+        <div class="two-col">
+          <div>
+            <strong>Correferencia léxico-semántica:</strong>
+            <ul class="styled">
+              <li>Repetición total/parcial.</li>
+              <li>Sinónimos, hiperónimos/hipónimos, antónimos.</li>
+              <li>Metáfora o metonimia sustitutiva.</li>
+              <li>Calificaciones valorativas, palabras baúl.</li>
+              <li>Campos semánticos y asociativos.</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Correferencia gramatical:</strong>
+            <ul class="styled">
+              <li>Pronombres (anáfora, catáfora).</li>
+              <li>Demostrativos, posesivos, relativos.</li>
+              <li>Elipsis.</li>
+            </ul>
+            <strong>Conectores/marcadores:</strong>
+            <ul class="styled">
+              <li>Ordenadores, aditivos, contrastivos.</li>
+              <li>Causales, consecutivos, concesivos.</li>
+              <li>De reformulación, ejemplificación, conclusión.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tip-box">Céntrate primero en la correferencia léxico-semántica (siempre presente), luego en anáforas, y al final en conectores. Siempre pon ejemplos concretos del texto.</div>
+
+        <h4>4. Tipos de enunciados (Sintaxis)</h4>
+        <p>Caracteriza brevemente la sintaxis global (sencilla/compleja, coordinada/subordinada, oraciones largas/breves). Luego comenta las construcciones más relevantes con ejemplos:</p>
+        <ul class="styled">
+          <li><strong>Sub. sustantivas</strong> (verbos de decir): introducen voces ajenas; texto dialógico y polifónico.</li>
+          <li><strong>Sub. causales, consecutivas, condicionales, finales:</strong> operaciones lógicas de los argumentos.</li>
+          <li><strong>Sub. concesivas:</strong> estrategia de concesión al receptor.</li>
+          <li><strong>Coordinadas adversativas:</strong> contraargumentación.</li>
+          <li><strong>Interrogativas retóricas:</strong> implicación del receptor.</li>
+          <li><strong>Exclamativas:</strong> subjetividad y modalización.</li>
+        </ul>
+
+        <h4>5–7. Léxico: características, relaciones semánticas y denotación/connotación</h4>
+        <p><strong>Características léxicas:</strong> cultismos, préstamos, neologismos, tecnicismos, sufijos expresivos (-ismo, -ción…), coloquialismos, frases hechas. Relaciónalo con la mezcla de registros.</p>
+        <p><strong>Relaciones semánticas:</strong> sinonimia, antonimia, hiperonimia/hiponimia, polisemia, homonimia, metáfora, metonimia, campos semánticos.</p>
+        <p><strong>Denotación / connotación:</strong> el significado denotativo es objetivo; el connotativo añade carga subjetiva o valorativa. En textos argumentativos la connotación es abundante (adjetivos, sustantivos, adverbios valorativos); siempre hay también elementos denotativos para representar la realidad.</p>
+
+        <h4>8. Tipología textual, ámbito de uso y género textual</h4>
+        <div class="card-grid">
+          <div class="card"><div class="card-accent" style="background:var(--rust)"></div>
+            <h4>Tipología textual</h4>
+            <p>Muy probablemente: <strong>expositivo-argumentativo</strong>. Justifica con la finalidad (convencer/informar) y la estructura (tesis + argumentos).</p>
+          </div>
+          <div class="card"><div class="card-accent" style="background:var(--slate)"></div>
+            <h4>Ámbito de uso</h4>
+            <p>Muy probablemente: <strong>periodístico con tintes humanísticos</strong>. Caracteriza el espacio social (emisor experto, receptor amplio, medio de comunicación).</p>
+          </div>
+          <div class="card"><div class="card-accent" style="background:var(--gold)"></div>
+            <h4>Género textual</h4>
+            <p>Muy probablemente: <strong>artículo de opinión</strong>. Justifica con el formato (firma, titular, columna) y rasgos lingüísticos (1.ª persona, valoraciones).</p>
+          </div>
+        </div>
+
+        <h4>9. Funciones del lenguaje</h4>
+        <p>Ordena por importancia y comenta las 2–3 más relevantes con ejemplos del texto. En un artículo de opinión suelen predominar:</p>
+        <ul class="styled">
+          <li><strong>Apelativa/conativa:</strong> interrogaciones retóricas, imperativos, 2.ª persona → busca implicar al receptor.</li>
+          <li><strong>Emotiva/expresiva:</strong> 1.ª persona, léxico valorativo, exclamaciones → expresa la subjetividad del autor.</li>
+          <li><strong>Representativa/referencial:</strong> datos, hechos, realidad → base informativa del texto.</li>
+          <li>Pueden aparecer también la <strong>poética</strong> (recursos estilísticos) y la <strong>metalingüística</strong> (referencias al lenguaje).</li>
+        </ul>
+        <div class="warn-box"><strong>Recuerda siempre:</strong> establece un orden de importancia, no enumeres sin más. Apoya cada función con al menos un ejemplo extraído del texto analizado.</div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /wrapper -->
+
+<div style="background:var(--ink);color:rgba(250,247,242,0.4);text-align:center;padding:22px;font-size:12px;letter-spacing:1px;font-family:'Source Serif 4',serif;">
+  Resumen PAU · Lengua Castellana y Literatura 2024–25
+</div>
+
+</body>
+</html>
