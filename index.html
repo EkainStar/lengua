@@ -6,641 +6,238 @@
 <title>Literatura Española — Guía de Estudio</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #f5f0e8;
-    --dark: #1a1410;
-    --brown: #6b4c2a;
-    --rust: #c0522a;
-    --gold: #d4a843;
-    --sage: #5a7a5a;
-    --deep-blue: #2a3d5c;
-    --muted: #8a7a6a;
-    --card-bg: #fffdf8;
-    --border: #e0d5c5;
-  }
+:root{--cream:#f5f0e8;--dark:#1a1410;--brown:#6b4c2a;--rust:#c0522a;--gold:#d4a843;--sage:#5a7a5a;--deep-blue:#2a3d5c;--muted:#8a7a6a;--card-bg:#fffdf8;--border:#e0d5c5}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--rust);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--brown)}
+*{scrollbar-width:thin;scrollbar-color:var(--rust) var(--cream)}
 
-  html { scroll-behavior: smooth; }
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--dark);padding:0 2rem;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:#aaa;text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 1.1rem;white-space:nowrap;transition:color .2s;border-bottom:2px solid transparent}
+nav a:hover,nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
 
-  body {
-    background: var(--cream);
-    color: var(--dark);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-  }
+/* HERO */
+header{background:var(--dark);color:white;text-align:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(192,82,42,.25) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(212,168,67,.15) 0%,transparent 50%)}
+header h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4rem);font-weight:900;letter-spacing:-.02em;line-height:1.1;position:relative}
+header p{margin-top:.8rem;color:#aaa;font-size:13px;letter-spacing:.12em;text-transform:uppercase;position:relative}
+.hero-tags{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;position:relative}
+.hero-tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ddd;border-radius:20px;padding:.3rem .9rem;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 
-  /* ── NAVIGATION ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--dark);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  nav::-webkit-scrollbar { display: none; }
-  nav a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    padding: 1rem 1.2rem;
-    white-space: nowrap;
-    transition: color .2s;
-    border-bottom: 2px solid transparent;
-  }
-  nav a:hover, nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
+/* SECTIONS */
+section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+section+section{padding-top:0}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.4rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;line-height:1.15;color:var(--dark);margin-bottom:2rem}
+h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:.8rem}
 
-  /* ── HERO ── */
-  header {
-    background: var(--dark);
-    color: white;
-    text-align: center;
-    padding: 5rem 2rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  header::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 30% 60%, rgba(192,82,42,.25) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 30%, rgba(212,168,67,.15) 0%, transparent 50%);
-  }
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 6vw, 4rem);
-    font-weight: 900;
-    letter-spacing: -.02em;
-    line-height: 1.1;
-    position: relative;
-  }
-  header p {
-    margin-top: .8rem;
-    color: #aaa;
-    font-size: 13px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    position: relative;
-  }
-  .hero-tags {
-    display: flex;
-    gap: .5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-    position: relative;
-  }
-  .hero-tag {
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.15);
-    color: #ddd;
-    border-radius: 20px;
-    padding: .3rem .9rem;
-    font-size: 11px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
+.divider{width:100%;height:2px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:0}
+.full-divider{background:var(--dark);height:3px;width:100%}
 
-  /* ── SECTIONS ── */
-  section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-  section + section { padding-top: 0; }
+/* CARDS */
+.context-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+.context-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1.4rem;border-top:3px solid var(--rust)}
+.context-card.blue{border-top-color:var(--deep-blue)}
+.context-card.gold{border-top-color:var(--gold)}
+.context-card h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.context-card ul{list-style:none}
+.context-card li{padding:.3rem 0;border-bottom:1px solid var(--border);font-size:13.5px;display:flex;gap:.5rem;align-items:flex-start}
+.context-card li:last-child{border-bottom:none}
+.context-card li::before{content:'→';color:var(--rust);flex-shrink:0;font-weight:700}
+.context-card.blue li::before{color:var(--deep-blue)}
+.context-card.gold li::before{color:var(--gold)}
 
-  .section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: .4rem;
-  }
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 900;
-    line-height: 1.15;
-    color: var(--dark);
-    margin-bottom: 2rem;
-  }
-  h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: .8rem;
-  }
+.rasgos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-bottom:2rem}
+.rasgo{background:var(--dark);color:white;border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:flex-start;gap:.6rem}
+.rasgo-icon{font-size:1.2rem;flex-shrink:0}
+.rasgo-text{font-size:13px;line-height:1.5}
+.rasgo-text strong{display:block;font-size:12px;color:var(--gold);margin-bottom:.1rem;letter-spacing:.05em;text-transform:uppercase}
 
-  /* ── DIVIDER ── */
-  .divider {
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
-    margin: 0;
-  }
-  .full-divider {
-    background: var(--dark);
-    height: 3px;
-    width: 100%;
-  }
+.autores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.autor-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.autor-header{padding:1rem 1.2rem .6rem;display:flex;align-items:center;gap:.8rem;background:linear-gradient(135deg,var(--dark) 0%,#2a2018 100%);color:white}
+.autor-num{width:28px;height:28px;background:var(--rust);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.autor-header h4{font-family:'Playfair Display',serif;font-size:1.05rem}
+.autor-header span{font-size:11px;color:#aaa}
+.autor-body{padding:1rem 1.2rem}
+.autor-body p{font-size:13px;margin-bottom:.6rem}
+.obra-tag{display:inline-block;background:rgba(192,82,42,.1);color:var(--rust);border:1px solid rgba(192,82,42,.3);border-radius:6px;padding:.15rem .5rem;font-size:11.5px;font-style:italic;margin:.1rem .1rem .1rem 0}
 
-  /* ── CONTEXT GRID ── */
-  .context-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .context-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.4rem;
-    border-top: 3px solid var(--rust);
-  }
-  .context-card.blue { border-top-color: var(--deep-blue); }
-  .context-card.gold { border-top-color: var(--gold); }
-  .context-card h4 {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: .8rem;
-  }
-  .context-card ul { list-style: none; }
-  .context-card li {
-    padding: .3rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13.5px;
-    display: flex;
-    gap: .5rem;
-    align-items: flex-start;
-  }
-  .context-card li:last-child { border-bottom: none; }
-  .context-card li::before { content: '→'; color: var(--rust); flex-shrink: 0; font-weight: 700; }
-  .context-card.blue li::before { color: var(--deep-blue); }
-  .context-card.gold li::before { color: var(--gold); }
+.machado-banner{background:linear-gradient(135deg,var(--deep-blue),#1a2a40);color:white;border-radius:16px;padding:2rem;margin-bottom:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:600px){.machado-banner{grid-template-columns:1fr}}
+.machado-banner h3{color:var(--gold);font-size:1.1rem;margin-bottom:.8rem}
+.machado-banner ul{list-style:none}
+.machado-banner li{font-size:13px;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.5rem}
+.machado-banner li::before{content:'◆';color:var(--gold);font-size:.6rem;margin-top:.35rem;flex-shrink:0}
+.libro-pill{background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.4);color:var(--gold);border-radius:8px;padding:.5rem 1rem;font-size:13px;margin-top:.5rem;display:inline-block}
 
-  /* ── RASGOS ── */
-  .rasgos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: .8rem;
-    margin-bottom: 2rem;
-  }
-  .rasgo {
-    background: var(--dark);
-    color: white;
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    display: flex;
-    align-items: flex-start;
-    gap: .6rem;
-  }
-  .rasgo-icon { font-size: 1.2rem; flex-shrink: 0; }
-  .rasgo-text { font-size: 13px; line-height: 1.5; }
-  .rasgo-text strong { display: block; font-size: 12px; color: var(--gold); margin-bottom: .1rem; letter-spacing: .05em; text-transform: uppercase; }
+/* POEMAS */
+.poemas-container{display:flex;flex-direction:column;gap:1.2rem}
+.poema-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow .2s}
+.poema-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.1)}
+.poema-toggle{width:100%;background:none;border:none;padding:1rem 1.4rem;text-align:left;cursor:pointer;display:flex;align-items:center;gap:1rem;font-family:inherit}
+.poema-toggle:hover{background:rgba(0,0,0,.02)}
+.poema-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:20px}
+.poema-toggle-title{flex:1;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark);text-align:left}
+.poema-libro{font-size:11px;color:white;background:var(--deep-blue);border-radius:5px;padding:.2rem .6rem;white-space:nowrap}
+.poema-libro.soledades{background:var(--sage)}
+.poema-libro.guerra{background:#8b2020}
+.poema-libro.nuevas{background:var(--brown)}
+.poema-chevron{font-size:12px;color:var(--muted);transition:transform .3s}
+.poema-card.open .poema-chevron{transform:rotate(180deg)}
+.poema-body{display:none;padding:0 1.4rem 1.4rem;animation:slideDown .25s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.poema-card.open .poema-body{display:block}
+.poema-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media(max-width:650px){.poema-grid{grid-template-columns:1fr}}
 
-  /* ── AUTORES ── */
-  .autores-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-  }
-  .autor-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .autor-header {
-    padding: 1rem 1.2rem .6rem;
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-    background: linear-gradient(135deg, var(--dark) 0%, #2a2018 100%);
-    color: white;
-  }
-  .autor-num {
-    width: 28px; height: 28px;
-    background: var(--rust);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700;
-    flex-shrink: 0;
-  }
-  .autor-header h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; }
-  .autor-header span { font-size: 11px; color: #aaa; }
-  .autor-body { padding: 1rem 1.2rem; }
-  .autor-body p { font-size: 13px; margin-bottom: .6rem; }
-  .obra-tag {
-    display: inline-block;
-    background: rgba(192,82,42,.1);
-    color: var(--rust);
-    border: 1px solid rgba(192,82,42,.3);
-    border-radius: 6px;
-    padding: .15rem .5rem;
-    font-size: 11.5px;
-    font-style: italic;
-    margin: .1rem .1rem .1rem 0;
-  }
+.poema-texto{background:#faf7f0;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1rem 1.2rem;font-family:'Playfair Display',serif;font-size:13px;line-height:1.9;white-space:pre-line;max-height:320px;overflow-y:auto}
+.highlight-rec{background:rgba(212,168,67,.25);border-bottom:2px solid var(--gold);cursor:help;border-radius:2px;position:relative}
+.highlight-rec:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:0;background:var(--dark);color:white;font-size:11px;padding:.3rem .6rem;border-radius:6px;white-space:nowrap;z-index:10;pointer-events:none;font-family:'DM Sans',sans-serif;font-style:normal}
 
-  /* ── MACHADO ESPECIAL ── */
-  .machado-banner {
-    background: linear-gradient(135deg, var(--deep-blue), #1a2a40);
-    color: white;
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  @media(max-width:600px){ .machado-banner { grid-template-columns: 1fr; } }
-  .machado-banner h3 { color: var(--gold); font-size: 1.1rem; margin-bottom: .8rem; }
-  .machado-banner ul { list-style: none; }
-  .machado-banner li { font-size: 13px; padding: .3rem 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; gap: .5rem; }
-  .machado-banner li::before { content: '◆'; color: var(--gold); font-size: .6rem; margin-top: .35rem; flex-shrink: 0; }
-  .libro-pill {
-    background: rgba(212,168,67,.15);
-    border: 1px solid rgba(212,168,67,.4);
-    color: var(--gold);
-    border-radius: 8px;
-    padding: .5rem 1rem;
-    font-size: 13px;
-    margin-top: .5rem;
-    display: inline-block;
-  }
+.poema-info{display:flex;flex-direction:column;gap:.8rem}
+.info-pill{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem}
+.info-pill .label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.info-pill .value{font-size:13px}
+.tema-badge{background:var(--rust);color:white;border-radius:6px;padding:.4rem .8rem;font-size:13px;font-weight:600;display:inline-block}
+.recursos-list{list-style:none}
+.recursos-list li{font-size:12.5px;padding:.25rem 0;border-bottom:1px solid var(--border);display:flex;gap:.5rem}
+.recursos-list li:last-child{border-bottom:none}
+.rec-tag{background:rgba(192,82,42,.12);color:var(--rust);border-radius:4px;padding:.05rem .4rem;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0;height:fit-content;margin-top:.1rem}
 
-  /* ── POEMAS TABLE ── */
-  .poemas-container { display: flex; flex-direction: column; gap: 1.2rem; }
-  .poema-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: box-shadow .2s;
-  }
-  .poema-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); }
-  .poema-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 1rem 1.4rem;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: inherit;
-  }
-  .poema-toggle:hover { background: rgba(0,0,0,.02); }
-  .poema-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    min-width: 20px;
-  }
-  .poema-toggle-title {
-    flex: 1;
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--dark);
-    text-align: left;
-  }
-  .poema-libro {
-    font-size: 11px;
-    color: white;
-    background: var(--deep-blue);
-    border-radius: 5px;
-    padding: .2rem .6rem;
-    white-space: nowrap;
-  }
-  .poema-libro.soledades { background: var(--sage); }
-  .poema-libro.guerra { background: #8b2020; }
-  .poema-chevron {
-    font-size: 12px;
-    color: var(--muted);
-    transition: transform .25s;
-  }
-  .poema-card.open .poema-chevron { transform: rotate(180deg); }
-  .poema-body {
-    display: none;
-    padding: 0 1.4rem 1.4rem;
-  }
-  .poema-card.open .poema-body { display: block; }
-  .poema-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-  }
-  @media(max-width:650px){ .poema-grid { grid-template-columns: 1fr; } }
-  .poema-texto {
-    background: #faf7f0;
-    border-left: 3px solid var(--gold);
-    border-radius: 0 8px 8px 0;
-    padding: 1rem 1.2rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    line-height: 1.9;
-    white-space: pre-line;
-    max-height: 320px;
-    overflow-y: auto;
-  }
-  .poema-info { display: flex; flex-direction: column; gap: .8rem; }
-  .info-pill {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: .7rem 1rem;
-  }
-  .info-pill .label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: .2rem;
-  }
-  .info-pill .value { font-size: 13px; }
-  .tema-badge {
-    background: var(--rust);
-    color: white;
-    border-radius: 6px;
-    padding: .4rem .8rem;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-block;
-  }
+/* VANGUARDIAS */
+.vanguardia-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin-bottom:2rem}
+.v-card{border-radius:10px;padding:1rem 1.2rem;border:1px solid var(--border);background:var(--card-bg);border-top:3px solid var(--sage)}
+.v-card h4{font-family:'Playfair Display',serif;font-size:.95rem;margin-bottom:.4rem}
+.v-card .v-origin{font-size:11px;color:var(--muted);margin-bottom:.5rem}
+.v-card p{font-size:12.5px}
 
-  /* ── VANGUARDIAS ── */
-  .vanguardia-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: .8rem;
-    margin-bottom: 2rem;
-  }
-  .v-card {
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    border-top: 3px solid var(--sage);
-  }
-  .v-card h4 { font-family: 'Playfair Display', serif; font-size: .95rem; margin-bottom: .4rem; }
-  .v-card .v-origin { font-size: 11px; color: var(--muted); margin-bottom: .5rem; }
-  .v-card p { font-size: 12.5px; }
+.gen27-etapas{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+@media(max-width:600px){.gen27-etapas{grid-template-columns:1fr}}
+.etapa-card{background:var(--dark);color:white;border-radius:10px;padding:1.2rem;text-align:center}
+.etapa-card .etapa-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:900}
+.etapa-card .etapa-fecha{font-size:11px;color:#aaa;margin-bottom:.5rem}
+.etapa-card p{font-size:12.5px}
 
-  .gen27-etapas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  @media(max-width:600px){ .gen27-etapas { grid-template-columns: 1fr; } }
-  .etapa-card {
-    background: var(--dark);
-    color: white;
-    border-radius: 10px;
-    padding: 1.2rem;
-    text-align: center;
-  }
-  .etapa-card .etapa-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 900; }
-  .etapa-card .etapa-fecha { font-size: 11px; color: #aaa; margin-bottom: .5rem; }
-  .etapa-card p { font-size: 12.5px; }
+.poetas27-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.8rem}
+.poeta27-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.poeta27-card .p27-name{font-weight:700;font-size:.95rem}
+.poeta27-card .p27-lugar{font-size:11px;color:var(--muted)}
+.poeta27-card .p27-tema{font-size:13px}
+.poeta27-card .p27-obras{font-size:12px;font-style:italic;color:var(--brown)}
 
-  .poetas27-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: .8rem;
-  }
-  .poeta27-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-  }
-  .poeta27-card .p27-name { font-weight: 700; font-size: .95rem; }
-  .poeta27-card .p27-lugar { font-size: 11px; color: var(--muted); }
-  .poeta27-card .p27-tema { font-size: 13px; }
-  .poeta27-card .p27-obras { font-size: 12px; font-style: italic; color: var(--brown); }
+/* OBRA ANÁLISIS */
+.obra-hero{background:var(--dark);color:white;border-radius:16px;padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.obra-hero::after{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(192,82,42,.3),transparent 70%)}
+.obra-hero h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);margin-bottom:.3rem}
+.obra-hero .obra-autor{font-size:13px;color:#aaa;margin-bottom:1rem}
+.obra-hero p{font-size:14px;line-height:1.7;max-width:700px}
 
-  /* ── OBRA ANÁLISIS (Bernarda / Nada) ── */
-  .obra-hero {
-    background: var(--dark);
-    color: white;
-    border-radius: 16px;
-    padding: 2.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .obra-hero::after {
-    content: '';
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(192,82,42,.3), transparent 70%);
-  }
-  .obra-hero h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: .3rem; }
-  .obra-hero .obra-autor { font-size: 13px; color: #aaa; margin-bottom: 1rem; }
-  .obra-hero p { font-size: 14px; line-height: 1.7; max-width: 700px; }
+.obra-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:600px){.obra-grid{grid-template-columns:1fr}}
+.obra-block{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:1.2rem}
+.obra-block h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:.8rem}
+.obra-block ul{list-style:none}
+.obra-block li{font-size:13px;padding:.3rem 0;border-bottom:1px solid var(--border)}
+.obra-block li:last-child{border-bottom:none}
+.obra-block li strong{color:var(--dark)}
+.obra-block p{font-size:13px}
 
-  .obra-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  @media(max-width:600px){ .obra-grid { grid-template-columns: 1fr; } }
+.personaje-row{display:flex;gap:.8rem;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:13px;align-items:flex-start}
+.personaje-row:last-child{border-bottom:none}
+.personaje-nombre{font-weight:700;min-width:100px;color:var(--rust)}
 
-  .obra-block {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem;
-  }
-  .obra-block h4 {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: .8rem;
-  }
-  .obra-block ul { list-style: none; }
-  .obra-block li { font-size: 13px; padding: .3rem 0; border-bottom: 1px solid var(--border); }
-  .obra-block li:last-child { border-bottom: none; }
-  .obra-block li strong { color: var(--dark); }
+.simbolo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin-top:1rem}
+.simbolo-item{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem;font-size:12.5px}
+.simbolo-item strong{display:block;color:var(--brown);font-size:12px;margin-bottom:.2rem}
 
-  .personaje-row {
-    display: flex;
-    gap: .8rem;
-    padding: .5rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    align-items: flex-start;
-  }
-  .personaje-row:last-child { border-bottom: none; }
-  .personaje-nombre { font-weight: 700; min-width: 100px; color: var(--rust); }
+.mensaje-box{background:linear-gradient(135deg,#1a2a1a,#0f1f0f);color:white;border-radius:12px;padding:1.5rem 2rem;border-left:4px solid var(--sage);margin-top:1rem}
+.mensaje-box p{font-size:14px;line-height:1.8}
 
-  .simbolo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: .7rem;
-    margin-top: 1rem;
-  }
-  .simbolo-item {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: .7rem .9rem;
-    font-size: 12.5px;
-  }
-  .simbolo-item strong { display: block; color: var(--brown); font-size: 12px; margin-bottom: .2rem; }
+/* POSGUERRA TIMELINE */
+.timeline{position:relative;padding-left:2rem;margin-bottom:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--rust),var(--deep-blue),var(--sage))}
+.tl-item{position:relative;margin-bottom:1.5rem;padding-left:1rem}
+.tl-item::before{content:'';position:absolute;left:-1.6rem;top:.4rem;width:10px;height:10px;border-radius:50%;background:var(--rust);border:2px solid var(--cream)}
+.tl-item.blue::before{background:var(--deep-blue)}
+.tl-item.green::before{background:var(--sage)}
+.tl-decade{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:.2rem}
+.tl-item.blue .tl-decade{color:var(--deep-blue)}
+.tl-item.green .tl-decade{color:var(--sage)}
+.tl-item h4{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.tl-item p{font-size:13px}
 
-  .mensaje-box {
-    background: linear-gradient(135deg, #1a2a1a, #0f1f0f);
-    color: white;
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    border-left: 4px solid var(--sage);
-    margin-top: 1rem;
-  }
-  .mensaje-box p { font-size: 14px; line-height: 1.8; }
+.nada-estructura{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0}
+@media(max-width:550px){.nada-estructura{grid-template-columns:1fr}}
+.parte-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:1rem;border-top:3px solid var(--deep-blue);text-align:center}
+.parte-card .parte-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--deep-blue);font-weight:900}
+.parte-card p{font-size:12px}
 
-  /* ── POSGUERRA ── */
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--rust), var(--deep-blue), var(--sage));
-  }
-  .tl-item {
-    position: relative;
-    margin-bottom: 1.5rem;
-    padding-left: 1rem;
-  }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    left: -1.6rem; top: .4rem;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--rust);
-    border: 2px solid var(--cream);
-  }
-  .tl-item.blue::before { background: var(--deep-blue); }
-  .tl-item.green::before { background: var(--sage); }
-  .tl-decade {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: .2rem;
-  }
-  .tl-item.blue .tl-decade { color: var(--deep-blue); }
-  .tl-item.green .tl-decade { color: var(--sage); }
-  .tl-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
-  .tl-item p { font-size: 13px; }
+/* TEMAS PILLS */
+.temas-flex{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.tema-pill{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:.35rem .9rem;font-size:12.5px;display:flex;align-items:center;gap:.4rem}
+.tema-pill .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 
-  /* ── NADA OBRA ── */
-  .nada-estructura {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .8rem;
-    margin: 1rem 0;
-  }
-  @media(max-width:550px){ .nada-estructura { grid-template-columns: 1fr; } }
-  .parte-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem;
-    border-top: 3px solid var(--deep-blue);
-    text-align: center;
-  }
-  .parte-card .parte-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--deep-blue); font-weight: 900; }
-  .parte-card p { font-size: 12px; }
+blockquote{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1rem 0;font-family:'Playfair Display',serif;font-style:italic;color:var(--brown);font-size:1rem;background:rgba(212,168,67,.05);border-radius:0 8px 8px 0}
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    color: #666;
-    text-align: center;
-    padding: 2rem;
-    font-size: 12px;
-    margin-top: 4rem;
-  }
+.full-width-section{background:#f0e8da;width:100%;padding:4rem 0}
+.full-width-section>section{padding-top:0}
 
-  /* ── HIGHLIGHT CHIPS ── */
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: .3rem;
-    background: rgba(192,82,42,.1);
-    color: var(--rust);
-    border: 1px solid rgba(192,82,42,.25);
-    border-radius: 6px;
-    padding: .15rem .6rem;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .chip.blue { background: rgba(42,61,92,.1); color: var(--deep-blue); border-color: rgba(42,61,92,.25); }
-  .chip.green { background: rgba(90,122,90,.1); color: var(--sage); border-color: rgba(90,122,90,.25); }
+/* ═══ QUIZ STYLES ═══ */
+.quiz-section{background:var(--dark);border-radius:16px;padding:2rem;margin-top:2.5rem;color:white}
+.quiz-section h3{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.quiz-score{font-size:12px;color:#aaa;margin-left:auto;font-family:'DM Mono',monospace}
 
-  /* ── TEMAS MACHADO PILLS ── */
-  .temas-flex { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
-  .tema-pill {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: .35rem .9rem;
-    font-size: 12.5px;
-    display: flex; align-items: center; gap: .4rem;
-  }
-  .tema-pill .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+/* MCQ quiz */
+.quiz-q{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.quiz-q:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.quiz-q .q-text{font-size:14px;margin-bottom:.8rem;line-height:1.6}
+.quiz-options{display:flex;flex-direction:column;gap:.4rem}
+.quiz-opt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.6rem 1rem;font-size:13px;cursor:pointer;transition:all .2s;text-align:left;color:white;font-family:inherit}
+.quiz-opt:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.quiz-opt.correct{background:rgba(90,122,90,.35);border-color:var(--sage);color:white}
+.quiz-opt.wrong{background:rgba(192,82,42,.3);border-color:var(--rust);color:white}
+.quiz-opt:disabled{cursor:not-allowed}
+.quiz-feedback{font-size:12px;margin-top:.5rem;padding:.4rem .8rem;border-radius:6px}
+.quiz-feedback.ok{background:rgba(90,122,90,.2);color:#8ecb8e}
+.quiz-feedback.fail{background:rgba(192,82,42,.2);color:#e8956e}
+.quiz-btn{background:var(--rust);color:white;border:none;border-radius:8px;padding:.6rem 1.4rem;font-size:13px;cursor:pointer;margin-top:1rem;font-family:inherit;font-weight:600;transition:background .2s}
+.quiz-btn:hover{background:var(--brown)}
 
-  /* ── QUOTE ── */
-  blockquote {
-    border-left: 3px solid var(--gold);
-    padding: .8rem 1.2rem;
-    margin: 1rem 0;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--brown);
-    font-size: 1rem;
-    background: rgba(212,168,67,.05);
-    border-radius: 0 8px 8px 0;
-  }
+/* FLIP CARDS */
+.flip-intro{font-size:13px;color:#aaa;margin-bottom:1rem}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:1rem}
+.flip-card{height:120px;perspective:600px;cursor:pointer}
+.flip-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8rem;text-align:center}
+.flip-front{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.flip-front .f-label{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+.flip-front .f-title{font-family:'Playfair Display',serif;font-size:.95rem;color:white;font-weight:700}
+.flip-back{background:var(--rust);border:1px solid rgba(255,255,255,.2);transform:rotateY(180deg)}
+.flip-back .b-text{font-size:12.5px;color:white;line-height:1.5}
+.flip-hint{font-size:11px;color:#666;text-align:center;margin-top:.5rem}
 
-  .full-width-section {
-    background: #f0e8da;
-    width: 100%;
-    padding: 4rem 0;
-  }
-  .full-width-section > section { padding-top: 0; }
+/* MATCH GAME */
+.match-intro{font-size:13px;color:#aaa;margin-bottom:1rem}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.match-col h5{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.6rem}
+.match-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.55rem .9rem;font-size:13px;cursor:pointer;margin-bottom:.5rem;transition:all .2s;user-select:none}
+.match-item:hover{background:rgba(255,255,255,.1)}
+.match-item.selected{background:rgba(212,168,67,.2);border-color:var(--gold);color:var(--gold)}
+.match-item.matched{background:rgba(90,122,90,.25);border-color:var(--sage);color:#8ecb8e;cursor:default}
+.match-item.wrong{background:rgba(192,82,42,.25);border-color:var(--rust);animation:shake .3s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 
-  .tag-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+footer{background:var(--dark);color:#666;text-align:center;padding:2rem;font-size:12px;margin-top:4rem}
 </style>
 </head>
 <body>
@@ -670,19 +267,18 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════════ GENERACIÓN DEL 98 ═══════════════ -->
+<!-- ══════════ GEN 98 ══════════ -->
 <div id="gen98"></div>
 <section>
   <div class="section-label">Tema 1</div>
   <h2>Generación del 98</h2>
-
   <div class="context-grid">
     <div class="context-card">
       <h4>📜 Contexto Histórico</h4>
       <ul>
         <li>Crisis política y social a finales del s. XIX</li>
         <li>Reinado de Alfonso XIII (1902–1923): conflictos sociales</li>
-        <li>Dictadura de Primo de Rivera (1923–31): miseria generalizada</li>
+        <li>Dictadura de Primo de Rivera (1923–31)</li>
         <li>Segunda República (1931–39): reformas fallidas</li>
         <li><strong>Desastre del 98:</strong> pérdida de Cuba y Filipinas</li>
         <li>Guerra Civil (1936–1939): ruptura definitiva</li>
@@ -705,14 +301,14 @@
         <li><strong>Modernismo:</strong> talante estético (la forma)</li>
         <li><strong>Generación del 98:</strong> talante ideológico (el contenido)</li>
         <li>Ambos: «gente nueva» que rompe con el s. XIX</li>
-        <li>Profunda renovación lingüística y postura crítica</li>
+        <li>Renovación lingüística y postura crítica</li>
       </ul>
     </div>
   </div>
 
   <h3>Rasgos del Grupo del 98</h3>
   <div class="rasgos-grid">
-    <div class="rasgo"><span class="rasgo-icon">⚔️</span><div class="rasgo-text"><strong>Actitud antiburguesa</strong>Se declaran autodidactas y críticos con el sistema</div></div>
+    <div class="rasgo"><span class="rasgo-icon">⚔️</span><div class="rasgo-text"><strong>Actitud antiburguesa</strong>Autodidactas y críticos con el sistema</div></div>
     <div class="rasgo"><span class="rasgo-icon">🧠</span><div class="rasgo-text"><strong>Guías filosóficos</strong>Nietzsche, Schopenhauer y Kierkegaard</div></div>
     <div class="rasgo"><span class="rasgo-icon">🇪🇸</span><div class="rasgo-text"><strong>Tema España</strong>Castilla como esencia del alma española</div></div>
     <div class="rasgo"><span class="rasgo-icon">💭</span><div class="rasgo-text"><strong>Preocupación existencial</strong>Angustia, búsqueda de sentido</div></div>
@@ -722,96 +318,60 @@
     <div class="rasgo"><span class="rasgo-icon">📖</span><div class="rasgo-text"><strong>Innovación</strong>Nivola (Unamuno), esperpento (Valle-Inclán)</div></div>
   </div>
 
-  <h3 style="margin-top:2rem">Temas principales</h3>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
-    <div class="obra-block">
-      <h4>🇪🇸 España</h4>
-      <p style="font-size:13px">La decadencia internacional y la pérdida de las colonias provoca una reflexión profunda. Castilla se convierte en símbolo de los valores esenciales. Se busca la regeneración a través del paisaje, la <em>intrahistoria</em> y los clásicos.</p>
-    </div>
-    <div class="obra-block">
-      <h4>💭 Preocupación existencial</h4>
-      <p style="font-size:13px">Los protagonistas son seres angustiados sin respuesta en la religión. Baroja (ateo), Azorín (agnóstico→católico), Unamuno (lucha entre razón y fe). La angustia existencial es el motor narrativo.</p>
-    </div>
-  </div>
-
-  <h3>Escritores del Grupo</h3>
+  <h3 style="margin-top:2rem">Escritores del Grupo</h3>
   <div class="autores-grid">
     <div class="autor-card">
       <div class="autor-header"><div class="autor-num">1</div><div><h4>Antonio Machado</h4><span>Sevilla, 1875 — Colliure, 1939</span></div></div>
-      <div class="autor-body">
-        <p>Poeta y símbolo del 98. Catedrático de francés en Soria; casado con Leonor, que muere joven. Exiliado durante la Guerra Civil.</p>
-        <span class="obra-tag">Soledades, galerías y otros poemas</span>
-        <span class="obra-tag">Campos de Castilla</span>
-        <span class="obra-tag">Nuevas canciones</span>
-      </div>
+      <div class="autor-body"><p>Poeta y símbolo del 98. Catedrático de francés en Soria; casado con Leonor. Exiliado en la Guerra Civil.</p><span class="obra-tag">Soledades, galerías…</span><span class="obra-tag">Campos de Castilla</span><span class="obra-tag">Nuevas canciones</span></div>
     </div>
     <div class="autor-card">
       <div class="autor-header"><div class="autor-num">2</div><div><h4>Miguel de Unamuno</h4><span>Bilbao, 1864 — Salamanca, 1936</span></div></div>
-      <div class="autor-body">
-        <p>El más peculiar del 98. Lucha entre razón y fe, angustia de la existencia. Crea la <em>«nivola»</em>.</p>
-        <span class="obra-tag">Niebla</span>
-        <span class="obra-tag">San Manuel Bueno, mártir</span>
-        <span class="obra-tag">Abel Sánchez</span>
-      </div>
+      <div class="autor-body"><p>El más peculiar del 98. Lucha entre razón y fe. Crea la <em>«nivola»</em>.</p><span class="obra-tag">Niebla</span><span class="obra-tag">San Manuel Bueno, mártir</span><span class="obra-tag">Abel Sánchez</span></div>
     </div>
     <div class="autor-card">
       <div class="autor-header"><div class="autor-num">3</div><div><h4>Pío Baroja</h4><span>San Sebastián, 1872 — Madrid, 1956</span></div></div>
-      <div class="autor-body">
-        <p>Médico que deja la medicina por la literatura. Visión amarga y pesimista de España. Estilo vigoroso y expresivo.</p>
-        <span class="obra-tag">El árbol de la ciencia</span>
-        <span class="obra-tag">Zalacaín el aventurero</span>
-        <span class="obra-tag">La busca</span>
-      </div>
+      <div class="autor-body"><p>Médico que abandona la medicina. Visión amarga y pesimista. Estilo vigoroso.</p><span class="obra-tag">El árbol de la ciencia</span><span class="obra-tag">Zalacaín el aventurero</span><span class="obra-tag">La busca</span></div>
     </div>
     <div class="autor-card">
       <div class="autor-header"><div class="autor-num">4</div><div><h4>Azorín</h4><span>Monovar, 1873 — Madrid, 1967</span></div></div>
-      <div class="autor-body">
-        <p>Técnica descriptiva sutil. Prima la sencillez, brevedad y claridad. Obsesión por el tiempo que pasa.</p>
-        <span class="obra-tag">La voluntad</span>
-        <span class="obra-tag">Antonio Azorín</span>
-        <span class="obra-tag">Las confesiones…</span>
-      </div>
+      <div class="autor-body"><p>Sencillez, brevedad y claridad. Obsesión por el tiempo que pasa.</p><span class="obra-tag">La voluntad</span><span class="obra-tag">Antonio Azorín</span></div>
     </div>
     <div class="autor-card">
       <div class="autor-header"><div class="autor-num">5</div><div><h4>Valle-Inclán</h4><span>Pontevedra, 1866 — Santiago, 1935</span></div></div>
-      <div class="autor-body">
-        <p>Figura excéntrica y genial. Dos etapas: prosa modernista refinada y luego el <em>esperpento</em>: visión deformante y grotesca.</p>
-        <span class="obra-tag">Las cuatro Sonatas</span>
-        <span class="obra-tag">Luces de bohemia</span>
-        <span class="obra-tag">Tirano Banderas</span>
-      </div>
+      <div class="autor-body"><p>Dos etapas: prosa modernista y el <em>esperpento</em>: visión deformante y grotesca.</p><span class="obra-tag">Las cuatro Sonatas</span><span class="obra-tag">Luces de bohemia</span><span class="obra-tag">Tirano Banderas</span></div>
     </div>
     <div class="autor-card">
       <div class="autor-header"><div class="autor-num">6</div><div><h4>Ramiro de Maeztu</h4><span>Vitoria, 1875 — Aravaca, 1936</span></div></div>
-      <div class="autor-body">
-        <p>Trayectoria inversa: de regeneracionista progresista a defensor del nacionalcatolicismo. Fusilado por republicanos.</p>
-        <span class="obra-tag">Hacia otra España</span>
-        <span class="obra-tag">Defensa de la hispanidad</span>
-      </div>
+      <div class="autor-body"><p>De regeneracionista progresista a defensor del nacionalcatolicismo.</p><span class="obra-tag">Hacia otra España</span><span class="obra-tag">Defensa de la hispanidad</span></div>
     </div>
+  </div>
+
+  <!-- QUIZ GEN 98 -->
+  <div class="quiz-section">
+    <h3>🎯 Quiz — Generación del 98 <span class="quiz-score" id="q98-score">0 / 4</span></h3>
+    <div id="quiz98"></div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ═══════════════════════════════ ANTONIO MACHADO ═══════════════ -->
+<!-- ══════════ MACHADO ══════════ -->
 <div id="machado"></div>
 <section>
   <div class="section-label">Tema 2</div>
   <h2>Antonio Machado — Vida y obra</h2>
-
   <div class="machado-banner">
     <div>
       <h3>Biografía clave</h3>
       <ul>
         <li>Nace en Sevilla, 1875</li>
         <li>Se traslada a Madrid con 8 años</li>
-        <li>Visita París → conoce el simbolismo francés</li>
+        <li>Visita París → simbolismo francés</li>
         <li>Catedrático de francés en Soria</li>
         <li>Se casa con Leonor Izquierdo → ella muere joven</li>
-        <li>Traslado a Baeza (Jaén) y luego Segovia</li>
-        <li>Firme republicano → exiliado a Colliure (Francia)</li>
-        <li>Muere en Colliure en 1939, poco después que su madre</li>
+        <li>Traslado a Baeza y luego Segovia</li>
+        <li>Firme republicano → exilio en Colliure (Francia)</li>
+        <li>Muere en Colliure en 1939</li>
       </ul>
     </div>
     <div>
@@ -822,7 +382,7 @@
       </div>
       <div>
         <div class="libro-pill">📗 Campos de Castilla (1912)</div>
-        <p style="font-size:13px;margin-top:.5rem">Etapa <strong>noventayochista</strong>. Añade el tema de España y Castilla. Poemas a Leonor tras su muerte.</p>
+        <p style="font-size:13px;margin-top:.5rem">Etapa <strong>noventayochista</strong>. Añade el tema de España. Poemas a Leonor tras su muerte.</p>
       </div>
     </div>
   </div>
@@ -833,17 +393,16 @@
     <span class="tema-pill"><span class="dot" style="background:#2a3d5c"></span>😶 La soledad — compañera del poeta</span>
     <span class="tema-pill"><span class="dot" style="background:#5a7a5a"></span>💤 El sueño — forma de conocimiento</span>
     <span class="tema-pill"><span class="dot" style="background:#d4a843"></span>💔 El amor evocado — poemas a Leonor</span>
-    <span class="tema-pill"><span class="dot" style="background:#8b2020"></span>🙏 Dios — «siempre buscando a Dios entre la niebla»</span>
+    <span class="tema-pill"><span class="dot" style="background:#8b2020"></span>🙏 Dios — «buscando a Dios entre la niebla»</span>
     <span class="tema-pill"><span class="dot" style="background:#6b4c2a"></span>🇪🇸 Castilla — decadencia y regeneración</span>
   </div>
-
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem">
     <div class="obra-block">
       <h4>✍️ Estilo</h4>
       <ul>
-        <li>Abundancia de <strong>símbolos</strong>: tarde = melancolía; reloj/agua = tiempo y muerte</li>
-        <li><strong>Sencillez formal y métrica</strong>: esencialidad del 98</li>
-        <li>Poemas en <strong>alejandrinos</strong> (14 sílabas) y <strong>silva-romance</strong></li>
+        <li>Abundancia de <strong>símbolos</strong>: tarde = melancolía; agua = tiempo y muerte</li>
+        <li><strong>Sencillez formal</strong>: esencialidad del 98</li>
+        <li>Versos <strong>alejandrinos</strong> (14 sílabas, 7+7) y <strong>silva-romance</strong></li>
         <li>Recupera el <strong>romance</strong> para la poesía culta</li>
         <li>«Universales del sentimiento»: tiempo, muerte, Dios</li>
       </ul>
@@ -854,7 +413,7 @@
         <li><strong>Teatro:</strong> La Lola se va a los puertos</li>
         <li><strong>Prosa:</strong> Juan de Mairena (aforismos)</li>
         <li><strong>Nuevas canciones (1924):</strong> proverbios filosóficos</li>
-        <li><strong>Poesías de guerra:</strong> elegías y compromiso republicano</li>
+        <li><strong>Poesías de guerra:</strong> elegías republicanas</li>
       </ul>
     </div>
   </div>
@@ -862,16 +421,16 @@
 
 <div class="divider"></div>
 
-<!-- ═══════════════════════════════ POEMAS ═══════════════ -->
+<!-- ══════════ POEMAS ══════════ -->
 <div id="poemas"></div>
 <section>
   <div class="section-label">Tema 3</div>
   <h2>Los 10 Poemas — Análisis</h2>
-  <p style="margin-bottom:1.5rem;color:var(--muted)">Haz clic en cada poema para desplegarlo y ver el texto completo junto al análisis.</p>
+  <p style="margin-bottom:1.5rem;color:var(--muted);font-size:13.5px">Haz clic para desplegar. Las palabras <span style="background:rgba(212,168,67,.25);border-bottom:2px solid var(--gold);padding:0 .2rem;border-radius:2px;font-size:12px">subrayadas en oro</span> son figuras literarias — pasa el ratón para ver cuál es.</p>
 
   <div class="poemas-container">
 
-    <!-- POEMA 1 -->
+    <!-- P1 -->
     <div class="poema-card" id="p1">
       <button class="poema-toggle" onclick="togglePoema('p1')">
         <span class="poema-num">01</span>
@@ -881,8 +440,8 @@
       </button>
       <div class="poema-body">
         <div class="poema-grid">
-          <div class="poema-texto">Yo voy soñando caminos
-de la tarde. ¡Las colinas
+          <div class="poema-texto"><span class="highlight-rec" data-tip="SÍMBOLO: el camino representa la vida del poeta">Yo voy soñando caminos</span>
+<span class="highlight-rec" data-tip="SÍMBOLO: la tarde representa la melancolía y la angustia">de la tarde.</span> ¡Las colinas
 doradas, los verdes pinos,
 las polvorientas encinas!...
 
@@ -907,20 +466,26 @@ y débilmente blanquea
 se enturbia y desaparece.
 
 Mi cantar vuelve a plañir:
-"Aguda espina dorada,
+<span class="highlight-rec" data-tip="METÁFORA: 'espina dorada' = la pasión amorosa dolorosa pero deseada">"Aguda espina dorada,
 "quién te pudiera sentir
-"en el corazón clavada".</div>
+"en el corazón clavada".</span></div>
           <div class="poema-info">
             <div><span class="tema-badge">Soledad · Amor perdido</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">El poeta camina al atardecer; rememora una pasión de la que se desprendió y ahora desea recuperar el dolor porque el vacío es peor.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">6 estrofas: 2 redondillas (abba) + 4 cuartetas (abab). Versos octosílabos, rima consonante.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Símbolos: camino (vida), tarde (melancolía), espina dorada (pasión). Encabalgamientos, paralelismos.</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">El poeta camina al atardecer y rememora una pasión de la que se desprendió. Ahora desea recuperar el dolor, porque el vacío emocional es peor.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">2 redondillas (abba) + 4 cuartetas (abab). Versos <strong>octosílabos</strong>, rima consonante.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">SÍMBOLO</span>El camino = vida del poeta</li>
+                <li><span class="rec-tag">SÍMBOLO</span>La tarde = melancolía y angustia</li>
+                <li><span class="rec-tag">METÁFORA</span>«Espina dorada» = la pasión dolorosa</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 2 -->
+    <!-- P2 -->
     <div class="poema-card" id="p2">
       <button class="poema-toggle" onclick="togglePoema('p2')">
         <span class="poema-num">02</span>
@@ -930,26 +495,21 @@ Mi cantar vuelve a plañir:
       </button>
       <div class="poema-body">
         <div class="poema-grid">
-          <div class="poema-texto">La España de charanga y pandereta,
+          <div class="poema-texto"><span class="highlight-rec" data-tip="ENUMERACIÓN: acumulación irónica de defectos de la España tradicional">La España de charanga y pandereta,
 cerrado y sacristía,
 devota de Frascuelo y de María,
-de espíritu burlón y de alma quieta,
+de espíritu burlón y de alma quieta,</span>
 ha de tener su mármol y su día,
 su infalible mañana y su poeta.
 
-El vano ayer engendrará un mañana
-vacío y ¡por ventura! pasajero.
-Será un joven lechuzo y tarambana...
+<span class="highlight-rec" data-tip="ANTÍTESIS: ayer vacío / mañana también vacío, ciclo sin salida">El vano ayer engendrará un mañana
+vacío y ¡por ventura! pasajero.</span>
 
 Esa España inferior que ora y bosteza,
-vieja y tahúr, zaragatera y triste;
-esa España inferior que ora y embiste...
+vieja y tahúr, zaragatera y triste...
 
-El vano ayer engendrará un mañana
-vacío y ¡por ventura! pasajero...
-
-Mas otra España nace,
-la España del cincel y de la maza,
+Mas <span class="highlight-rec" data-tip="PERSONIFICACIÓN + METÁFORA: España nace y la maza simboliza el trabajo regenerador">otra España nace,
+la España del cincel y de la maza,</span>
 con esa eterna juventud que se hace
 del pasado macizo de la raza.
 Una España implacable y redentora,
@@ -958,15 +518,21 @@ con un hacha en la mano vengadora,
 España de la rabia y de la idea.</div>
           <div class="poema-info">
             <div><span class="tema-badge">Crítica a España</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">Critica la España inmovilista y tradicional; contrasta con una España nueva, trabajadora y esperanzadora.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">Silva (heptasílabos + endecasílabos). Rima consonante aleatoria. Dos partes: España pasada / España nueva.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Enumeraciones, antítesis (ayer/mañana), metáforas (cincel y maza = trabajo), personificación (España nace).</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Critica la España inmovilista y vacía; contrasta con una España nueva, trabajadora y esperanzadora.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">Silva (heptasílabos + endecasílabos). Rima consonante aleatoria. Dos partes: España vieja / España nueva.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">ENUMERACIÓN</span>Acumulación irónica de los defectos de España</li>
+                <li><span class="rec-tag">ANTÍTESIS</span>«vano ayer» / «mañana vacío»</li>
+                <li><span class="rec-tag">PERSONIFICACIÓN</span>«otra España nace» con cincel y maza</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 3 -->
+    <!-- P3 -->
     <div class="poema-card" id="p3">
       <button class="poema-toggle" onclick="togglePoema('p3')">
         <span class="poema-num">03</span>
@@ -982,25 +548,33 @@ del viejo pueblo a la anchurosa plaza.
 
 En el amplio rectángulo desierto,
 bancos de piedra, evónimos y acacias
-simétricos dibujan
-sus negras sombras en la arena blanca.
+<span class="highlight-rec" data-tip="PERSONIFICACIÓN: los árboles 'dibujan' sus sombras como si tuvieran voluntad propia">simétricos dibujan
+sus negras sombras en la arena blanca.</span>
 
 En el cénit, la luna, y en la torre,
 la esfera del reloj iluminada.
 
+<span class="highlight-rec" data-tip="ANTÍTESIS: negras sombras / arena blanca — contraste visual que subraya la soledad">negras sombras... arena blanca</span>
+
 Yo en este viejo pueblo paseando
-solo, como un fantasma.</div>
+<span class="highlight-rec" data-tip="SÍMIL: 'como un fantasma' — compara la soledad del poeta con una presencia espectral">solo, como un fantasma.</span></div>
           <div class="poema-info">
             <div><span class="tema-badge">Soledad</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">Descripción nocturna de una plaza castellana. El poeta pasea solo, como un fantasma.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">Silva-romance: 12 versos endecasílabos y heptasílabos. Rima asonante en versos pares.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Antítesis (negras sombras/arena blanca), símil (como un fantasma), enumeraciones, hipérbatos.</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Descripción de una plaza castellana de noche. El poeta pasea completamente solo, como un fantasma sin pertenencia.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">Silva-romance: 12 versos endecasílabos y heptasílabos. Rima asonante en versos pares.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">PERSONIFICACIÓN</span>Los árboles «dibujan» sus sombras</li>
+                <li><span class="rec-tag">ANTÍTESIS</span>«negras sombras» / «arena blanca»</li>
+                <li><span class="rec-tag">SÍMIL</span>«solo, como un fantasma»</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 4 -->
+    <!-- P4 -->
     <div class="poema-card" id="p4">
       <button class="poema-toggle" onclick="togglePoema('p4')">
         <span class="poema-num">04</span>
@@ -1010,41 +584,40 @@ solo, como un fantasma.</div>
       </button>
       <div class="poema-body">
         <div class="poema-grid">
-          <div class="poema-texto">Al olmo viejo, hendido por el rayo
-y en su mitad podrido,
+          <div class="poema-texto"><span class="highlight-rec" data-tip="SÍMBOLO: el olmo viejo y enfermo simboliza a Leonor, enferma de tuberculosis">Al olmo viejo, hendido por el rayo
+y en su mitad podrido,</span>
 con las lluvias de abril y el sol de mayo
 algunas hojas verdes le han salido.
 
-¡El olmo centenario en la colina
-que lame el Duero! Un musgo amarillento
+¡<span class="highlight-rec" data-tip="EXCLAMACIÓN RETÓRICA: expresa la emoción del poeta ante el milagro de la vida que renace">El olmo centenario en la colina
+que lame el Duero!</span> Un musgo amarillento
 le mancha la corteza blanquecina
 al tronco carcomido y polvoriento.
 
-No será, cual los álamos cantores
-que guardan el camino y la ribera,
-habitado de pardos ruiseñores.
-
-Antes que te derribe, olmo del Duero,
-con su hacha el leñador...
-antes que rojo en el hogar, mañana,
-ardas en alguna mísera caseta...
+Antes que te derribe, olmo del Duero...
 olmo, quiero anotar en mi cartera
-la gracia de tu rama verdecida.
+la gracia de <span class="highlight-rec" data-tip="SÍMBOLO: la 'rama verdecida' = la esperanza de que Leonor (y el poeta) sobrevivan">tu rama verdecida.</span>
 
 Mi corazón espera
 también, hacia la luz y hacia la vida,
 otro milagro de la primavera.</div>
           <div class="poema-info">
             <div><span class="tema-badge">Esperanza · Amor a Leonor</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">El olmo viejo pero con brotes verdes simboliza a Leonor enferma. El poeta desea que ocurra un milagro de vida.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">Silva: 30 versos endecasílabos y heptasílabos. Rima consonante libre. Tres partes: descripción → deseo → esperanza.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Símbolo central (olmo = Leonor; rama verde = esperanza), epítetos, personificación.</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">El olmo viejo pero con brotes verdes simboliza a Leonor enferma. El poeta desea anotar ese milagro y espera otro igual para su corazón.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">Silva: 30 versos endecasílabos y heptasílabos. Rima consonante libre. Tres partes: descripción / deseo / esperanza.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">SÍMBOLO</span>El olmo viejo = Leonor enferma</li>
+                <li><span class="rec-tag">SÍMBOLO</span>La rama verdecida = esperanza de vida</li>
+                <li><span class="rec-tag">EXCLAMACIÓN</span>«¡El olmo centenario en la colina…!»</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 5 -->
+    <!-- P5 -->
     <div class="poema-card" id="p5">
       <button class="poema-toggle" onclick="togglePoema('p5')">
         <span class="poema-num">05</span>
@@ -1063,26 +636,32 @@ una mañana serena.
 
 Sentí tu mano en la mía,
 tu mano de compañera,
-tu voz de niña en mi oído
+<span class="highlight-rec" data-tip="SÍMIL: la voz de Leonor comparada con una campana nueva y virgen — fresca, pura, esperanzadora">tu voz de niña en mi oído
 como una campana nueva,
 como una campana virgen
-de un alba de primavera.
+de un alba de primavera.</span>
 
 ¡Eran tu voz y tu mano,
 en sueños, tan verdaderas!...
-Vive, esperanza, ¡quién sabe
-lo que se traga la tierra!</div>
+<span class="highlight-rec" data-tip="APÓSTROFE + EXCLAMACIÓN: el poeta se dirige directamente a la 'esperanza' personificándola">Vive, esperanza, ¡quién sabe
+lo que se traga la tierra!</span></div>
           <div class="poema-info">
             <div><span class="tema-badge">Amor · Muerte · Esperanza</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">Sueño con Leonor fallecida en un paisaje bello; parece tan real que alimenta la esperanza de que no todo acaba.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">3 estrofas de 6 versos. Octosílabos. Rima asonante en pares. Romance con separación estrófica.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Apóstrofe (tú: Leonor), símiles (como campana nueva), exclamaciones, personificación (esperanza vive).</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Sueño con Leonor fallecida en un paisaje bello. Parece tan real que alimenta la esperanza de que no todo acaba con la muerte.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">3 estrofas de 6 versos octosílabos. Rima asonante en pares (e-a). Romance con separación estrófica.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">SÍMIL</span>La voz de Leonor «como una campana nueva»</li>
+                <li><span class="rec-tag">APÓSTROFE</span>«Vive, esperanza» — Machado le habla a la esperanza</li>
+                <li><span class="rec-tag">PERSONIFICACIÓN</span>La esperanza «vive», la tierra «se traga» cosas</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 6 -->
+    <!-- P6 RETRATO -->
     <div class="poema-card" id="p6">
       <button class="poema-toggle" onclick="togglePoema('p6')">
         <span class="poema-num">06</span>
@@ -1092,10 +671,10 @@ lo que se traga la tierra!</div>
       </button>
       <div class="poema-body">
         <div class="poema-grid">
-          <div class="poema-texto">Mi infancia son recuerdos de un patio de Sevilla,
+          <div class="poema-texto"><span class="highlight-rec" data-tip="PARALELISMO: estructura bimembre repetida — 'mi infancia son... mi juventud... mi historia...'">Mi infancia son recuerdos de un patio de Sevilla,
 y un huerto claro donde madura el limonero;
 mi juventud, veinte años en tierras de Castilla;
-mi historia, algunos casos que recordar no quiero.
+mi historia, algunos casos que recordar no quiero.</span>
 
 Ni un seductor Mañara, ni un Bradomín he sido
 —ya conocéis mi torpe aliño indumentario—,
@@ -1107,27 +686,30 @@ pero mi verso brota de manantial sereno;
 y, más que un hombre al uso que sabe su doctrina,
 soy, en el buen sentido de la palabra, bueno.
 
-¿Soy clásico o romántico? No sé. Dejar quisiera
-mi verso, como deja el capitán su espada...
-
-Converso con el hombre que siempre va conmigo
-—quien habla solo espera hablar a Dios un día—.
+<span class="highlight-rec" data-tip="INTERROGACIÓN RETÓRICA: el poeta no espera respuesta, expresa su incertidumbre sobre su propia identidad literaria">¿Soy clásico o romántico? No sé.</span> Dejar quisiera
+mi verso, como deja el capitán su espada.
 
 Y cuando llegue el día del último viaje,
 y esté al partir la nave que nunca ha de tornar,
-me encontraréis a bordo ligero de equipaje,
-casi desnudo, como los hijos de la mar.</div>
+<span class="highlight-rec" data-tip="SÍMIL: 'como los hijos de la mar' — llegar a la muerte sin bienes materiales, libre como el marinero">me encontraréis a bordo ligero de equipaje,
+casi desnudo, como los hijos de la mar.</span></div>
           <div class="poema-info">
             <div><span class="tema-badge">Autorretrato</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">Autobiografía poética: infancia en Sevilla, juventud en Castilla, carácter, ideales, rechazo a modas y muerte serena.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">9 cuartetos. Endecasílabos. Rima consonante ABAB.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Interrogaciones retóricas (¿Soy clásico o romántico?), alusiones literarias, metáforas (espada = verso).</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Autobiografía poética: infancia en Sevilla, juventud en Castilla, carácter, ideales estéticos y actitud ante la muerte.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">9 <strong>serventesios alejandrinos</strong> (ABAB). Versos de 14 sílabas (7+7). Rima consonante.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">PARALELISMO</span>«Mi infancia… mi juventud… mi historia…»</li>
+                <li><span class="rec-tag">INTERROGACIÓN RET.</span>«¿Soy clásico o romántico? No sé»</li>
+                <li><span class="rec-tag">SÍMIL</span>«como los hijos de la mar» — morir sin ataduras</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 7 -->
+    <!-- P7 -->
     <div class="poema-card" id="p7">
       <button class="poema-toggle" onclick="togglePoema('p7')">
         <span class="poema-num">07</span>
@@ -1141,33 +723,38 @@ casi desnudo, como los hijos de la mar.</div>
 Yo, solo, por las quiebras del pedregal subía,
 buscando los recodos de sombra, lentamente.
 
-[...un buitre de anchas alas con majestuoso vuelo
-cruzaba solitario el puro azul del cielo...]
+Un buitre de anchas alas con majestuoso vuelo
+cruzaba solitario el puro azul del cielo.
 
-¡Oh, tierra triste y noble,
-la de los altos llanos y yermos y roquedas,
-de campos sin arados, regatos ni arboledas;
-decrépitas ciudades, caminos sin mesones,
-y atónitos palurdos sin danzas ni canciones!
+<span class="highlight-rec" data-tip="APÓSTROFE: el poeta se dirige directamente a Castilla, interpelándola como si pudiera escucharle">¡Oh, tierra triste y noble,
+la de los altos llanos y yermos y roquedas!</span>
 
-Castilla miserable, ayer dominadora,
-envuelta en sus andrajos desprecia cuanto ignora.
+<span class="highlight-rec" data-tip="ESTRIBILLO: la repetición subraya y machaca la idea de la decadencia castellana">Castilla miserable, ayer dominadora,
+envuelta en sus andrajos desprecia cuanto ignora.</span>
 ¿Espera, duerme o sueña? ¿La sangre derramada
 recuerda, cuando tuvo la fiebre de la espada?
+
+<span class="highlight-rec" data-tip="METÁFORA: 'harapos de un viejo arnés de guerra' — los cerros comparados con restos de armadura antigua">harapos esparcidos de un viejo arnés de guerra</span>
 
 Castilla miserable, ayer dominadora,
 envuelta en sus harapos desprecia cuanto ignora.</div>
           <div class="poema-info">
             <div><span class="tema-badge">Castilla · Decadencia</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">El poeta sube un cerro en julio, describe el paisaje del Duero y reflexiona sobre la decadencia de Castilla frente a su pasado glorioso.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">76 versos alejandrinos en pareados. Rima consonante. Tres partes: ascenso / reflexión / regreso.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Metáforas épicas, apóstrofe (¡Oh tierra!), interrogaciones retóricas, estribillo (Castilla miserable…), contrastes pasado/presente.</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Subida a un cerro en julio; descripción del paisaje del Duero. Reflexión sobre la decadencia de Castilla frente a su pasado glorioso.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">76 versos alejandrinos (14 sílabas, 7+7) en pareados. Rima consonante.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">APÓSTROFE</span>«¡Oh, tierra triste y noble…!»</li>
+                <li><span class="rec-tag">ESTRIBILLO</span>«Castilla miserable, ayer dominadora…»</li>
+                <li><span class="rec-tag">METÁFORA</span>Los cerros = «harapos de un viejo arnés de guerra»</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 8 -->
+    <!-- P8 -->
     <div class="poema-card" id="p8">
       <button class="poema-toggle" onclick="togglePoema('p8')">
         <span class="poema-num">08</span>
@@ -1180,12 +767,12 @@ envuelta en sus harapos desprecia cuanto ignora.</div>
           <div class="poema-texto">Una noche de verano
 —estaba abierto el balcón
 y la puerta de mi casa—
-la muerte en mi casa entró.
+<span class="highlight-rec" data-tip="PERSONIFICACIÓN: la muerte entra, camina, actúa como una persona que visita el hogar">la muerte en mi casa entró.
 
 Se fue acercando a su lecho
 —ni siquiera me miró—,
 con unos dedos muy finos,
-algo muy tenue rompió.
+algo muy tenue rompió.</span>
 
 Silenciosa y sin mirarme,
 la muerte otra vez pasó
@@ -1194,68 +781,75 @@ La muerte no respondió.
 
 Mi niña quedó tranquila,
 dolido mi corazón.
-¡Ay, lo que la muerte ha roto
-era un hilo entre los dos!</div>
+<span class="highlight-rec" data-tip="METÁFORA: 'un hilo entre los dos' — la vida compartida, el amor, el vínculo que la muerte rompe">¡Ay, lo que la muerte ha roto
+era un hilo entre los dos!</span></div>
           <div class="poema-info">
             <div><span class="tema-badge">Muerte · Pérdida de Leonor</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">La muerte entra en casa y rompe silenciosamente el hilo vital que unía al poeta con Leonor.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">Romance: 4 estrofas de 4 versos octosílabos. Rima asonante -ó en versos pares.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Personificación de la muerte, metáfora (hilo = vínculo amoroso), anáfora, encabalgamientos, exclamación final.</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">La muerte entra en casa y rompe silenciosamente el hilo vital que unía al poeta con Leonor. Poema de dolor contenido.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">Romance: 4 estrofas de 4 versos octosílabos. Rima asonante -ó en versos pares (2.º y 4.º).</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">PERSONIFICACIÓN</span>La muerte entra, se acerca, rompe, pasa</li>
+                <li><span class="rec-tag">METÁFORA</span>«Un hilo entre los dos» = el vínculo amoroso</li>
+                <li><span class="rec-tag">ANÁFORA</span>«la muerte» repetida para crear angustia</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 9 -->
+    <!-- P9 -->
     <div class="poema-card" id="p9">
       <button class="poema-toggle" onclick="togglePoema('p9')">
         <span class="poema-num">09</span>
         <span class="poema-toggle-title">Proverbios y cantares</span>
-        <span class="poema-libro" style="background:var(--brown)">Nuevas canciones</span>
+        <span class="poema-libro nuevas">Nuevas canciones</span>
         <span class="poema-chevron">▼</span>
       </button>
       <div class="poema-body">
         <div class="poema-grid">
-          <div class="poema-texto">I
+          <div class="poema-texto"><span class="highlight-rec" data-tip="PARADOJA: el ojo no existe porque tú lo ves, sino porque él te ve — la realidad no depende de nosotros">I
 El ojo que ves no es
 ojo porque tú lo veas;
-es ojo porque te ve.
+es ojo porque te ve.</span>
 
 XV
 Busca a tu complementario,
 que marcha siempre contigo,
 y suele ser tu contrario.
 
-LI
+<span class="highlight-rec" data-tip="SENTENCIA o AFORISMO: sabiduría condensada en forma de proverbio popular">LI
 Demos tiempo al tiempo:
 para que el vaso rebose
-hay que llenarlo primero.
+hay que llenarlo primero.</span>
 
 LXVI
 Poned atención:
 un corazón solitario
 no es un corazón.
 
-LXXXIV
-Entre las brevas soy blando;
-entre las rocas, de piedra.
-¡Malo!
-
 LXXXV
-¿Tu verdad? No, la Verdad,
+<span class="highlight-rec" data-tip="ANTÍTESIS: 'tu verdad' (subjetiva, particular) frente a 'la Verdad' (objetiva, universal)">¿Tu verdad? No, la Verdad,
 y ven conmigo a buscarla.
-La tuya, guárdatela.</div>
+La tuya, guárdatela.</span></div>
           <div class="poema-info">
             <div><span class="tema-badge">Filosofía · Reflexión</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">Breves meditaciones filosóficas: la objetividad, el complementario, la paciencia, la soledad del corazón, la Verdad universal.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">Soleás: 3 versos octosílabos, rima asonante 1.º-3.º. Etapa filosófica de Nuevas canciones (1924).</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Estilo popular y refranesco, apóstrofe (tú directo), elipsis, símbolos sencillos (vaso, brevas, piedra).</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Breves meditaciones filosóficas: la objetividad, la paciencia, la soledad del corazón y la búsqueda de la Verdad universal.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">Soleás: 3 versos octosílabos, rima asonante 1.º-3.º. Etapa filosófica — Nuevas canciones (1924).</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">PARADOJA</span>El ojo existe porque te ve, no porque tú lo veas</li>
+                <li><span class="rec-tag">AFORISMO</span>«Para que el vaso rebose hay que llenarlo primero»</li>
+                <li><span class="rec-tag">ANTÍTESIS</span>«Tu verdad» / «la Verdad» (subjetivo vs. universal)</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- POEMA 10 -->
+    <!-- P10 -->
     <div class="poema-card" id="p10">
       <button class="poema-toggle" onclick="togglePoema('p10')">
         <span class="poema-num">10</span>
@@ -1270,456 +864,339 @@ Se le vio, caminando entre fusiles
 por una calle larga,
 salir al campo frío,
 aún con estrellas, de la madrugada.
-Mataron a Federico
-cuando la luz asomaba.
+<span class="highlight-rec" data-tip="ELIPSIS DRAMÁTICA: omite el nombre completo — 'Mataron a Federico' ya lo identifica sin necesidad de apellidos">Mataron a Federico
+cuando la luz asomaba.</span>
 El pelotón de verdugos
 no osó mirarle a la cara.
-Todos cerraron los ojos;
-rezaron: ¡ni Dios te salva!
+
 Muerto cayó Federico
-—sangre en la frente y plomo en las entrañas—.
+<span class="highlight-rec" data-tip="METÁFORA: 'sangre en la frente y plomo en las entrañas' — imagen visual brutal que hace la muerte concreta y real">—sangre en la frente y plomo en las entrañas—.</span>
 ...Que fue en Granada el crimen
 sabed —¡pobre Granada!—, ¡en su Granada!...
 
 II — EL POETA Y LA MUERTE
-Se le vio caminar solo con Ella,
+<span class="highlight-rec" data-tip="PERSONIFICACIÓN: Lorca habla con la Muerte como si fuera una persona, incluso la corteja — mezcla de vida y muerte propia de Lorca">Se le vio caminar solo con Ella,
 sin miedo a su guadaña.
-«Porque ayer en mi verso, compañera,
-sonaba el eco de tus secas palmas...
-Hoy como ayer, gitana, muerte mía,
-qué bien contigo a solas,
-por estos aires de Granada, ¡mi Granada!»
+«Hoy como ayer, gitana, muerte mía,
+qué bien contigo a solas...»</span>
 
 III
-Se les vio caminar...
 Labrad, amigos,
 de piedra y sueño, en el Alhambra,
 un túmulo al poeta,
-sobre una fuente donde llore el agua,
 y eternamente diga:
 el crimen fue en Granada, ¡en su Granada!</div>
           <div class="poema-info">
             <div><span class="tema-badge">Elegía a Lorca</span></div>
-            <div class="info-pill"><div class="label">Resumen</div><div class="value">Elegía al fusilamiento de García Lorca. Tres partes: el crimen, el diálogo de Lorca con la muerte y la llamada a recordar el crimen.</div></div>
-            <div class="info-pill"><div class="label">Estructura</div><div class="value">3 partes. Versos octosílabos irregulares. Rima asonante/consonante irregular. Romance adaptado.</div></div>
-            <div class="info-pill"><div class="label">Recursos</div><div class="value">Personificación de la Muerte, repeticiones (se le vio), exclamaciones, metáforas (sangre en frente / plomo en entrañas), diálogo directo.</div></div>
+            <div class="info-pill"><div class="label">Resumen</div><div class="value">Elegía al fusilamiento de García Lorca. Tres partes: el crimen al amanecer, el diálogo de Lorca con la Muerte y la llamada a erigir un túmulo.</div></div>
+            <div class="info-pill"><div class="label">Métrica</div><div class="value">3 partes. Versos octosílabos irregulares. Rima asonante irregular. Romance adaptado.</div></div>
+            <div class="info-pill"><div class="label">🔍 Figuras literarias</div>
+              <ul class="recursos-list">
+                <li><span class="rec-tag">ELIPSIS</span>«Mataron a Federico» — nombre sin apellido, carga emotiva</li>
+                <li><span class="rec-tag">METÁFORA</span>«Sangre en la frente y plomo en las entrañas»</li>
+                <li><span class="rec-tag">PERSONIFICACIÓN</span>Lorca dialoga y corteja a la Muerte</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
   </div><!-- /poemas-container -->
+
+  <!-- QUIZ POEMAS -->
+  <div class="quiz-section" style="margin-top:2.5rem">
+    <h3>🎯 Quiz — Poemas de Machado <span class="quiz-score" id="qpoemas-score">0 / 4</span></h3>
+    <div id="quizPoemas"></div>
+  </div>
 </section>
 
 <div class="full-divider"></div>
 
-<!-- ═══════════════════════════════ VANGUARDIAS ═══════════════ -->
-<div id="vanguardias" style="background:#f0e8da">
+<!-- ══════════ VANGUARDIAS ══════════ -->
+<div id="vanguardias" style="background:#f0e8da"><div style="background:#f0e8da">
 <section style="padding-top:4rem">
   <div class="section-label">Tema 4</div>
   <h2>Las Vanguardias Europeas</h2>
-
   <div class="obra-block" style="margin-bottom:1.5rem">
     <h4>💡 Concepto</h4>
-    <p style="font-size:14px">Movimientos artísticos surgidos en Europa en el <strong>primer tercio del s. XX</strong>. Ruptura consciente y radical con la tradición, motivada por la crisis de la Primera Guerra Mundial, los avances científicos y la pérdida de valores estables. <strong>El arte deja de imitar la realidad para crear una nueva.</strong></p>
+    <p style="font-size:14px">Movimientos artísticos surgidos en Europa en el <strong>primer tercio del s. XX</strong>. Ruptura consciente y radical con la tradición, motivada por la crisis de la Primera Guerra Mundial y los avances científicos. <strong>El arte deja de imitar la realidad para crear una nueva.</strong></p>
   </div>
-
   <div class="rasgos-grid" style="margin-bottom:2rem">
     <div class="rasgo"><span class="rasgo-icon">💥</span><div class="rasgo-text"><strong>Ruptura</strong>Con el pasado literario y artístico</div></div>
     <div class="rasgo"><span class="rasgo-icon">🎯</span><div class="rasgo-text"><strong>Originalidad</strong>Búsqueda constante de lo nuevo</div></div>
     <div class="rasgo"><span class="rasgo-icon">📣</span><div class="rasgo-text"><strong>Manifiestos</strong>Promulgación de principios</div></div>
     <div class="rasgo"><span class="rasgo-icon">🎪</span><div class="rasgo-text"><strong>Escándalo</strong>El arte como provocación</div></div>
   </div>
-
   <h3>Principales movimientos</h3>
   <div class="vanguardia-grid">
-    <div class="v-card">
-      <h4>⚡ Futurismo</h4>
-      <div class="v-origin">Italia · Marinetti</div>
-      <p>Pasión por la velocidad y el progreso. Supresión de signos de puntuación, orden no lineal, eliminación de adjetivos.</p>
-    </div>
-    <div class="v-card" style="border-top-color:var(--rust)">
-      <h4>😱 Expresionismo</h4>
-      <div class="v-origin">Alemania</div>
-      <p>Carácter crítico, denuncia social (teatro). Valor a la imaginación y al sueño. Valle-Inclán en España.</p>
-    </div>
-    <div class="v-card" style="border-top-color:var(--deep-blue)">
-      <h4>🟦 Cubismo</h4>
-      <div class="v-origin">España · Picasso · Apollinaire</div>
-      <p>Diversos aspectos de la misma realidad simultáneos. Caligramas: poemas sin lógica lineal.</p>
-    </div>
-    <div class="v-card" style="border-top-color:var(--gold)">
-      <h4>🎲 Dadaísmo</h4>
-      <div class="v-origin">Rumanía · Tristan Tzara</div>
-      <p>Empezar de cero. Destruir todo lo anterior. Sentido del humor, ridiculización de la poesía.</p>
-    </div>
-    <div class="v-card" style="border-top-color:#8b2020">
-      <h4>💭 Surrealismo</h4>
-      <div class="v-origin">André Breton · Freud</div>
-      <p>Exploración del subconsciente y lo onírico. Escritura automática. <strong>Mayor impacto en España.</strong></p>
-    </div>
-    <div class="v-card" style="border-top-color:var(--muted)">
-      <h4>🌊 Creacionismo / Ultraísmo</h4>
-      <div class="v-origin">España · Gerardo Diego · Gómez de la Serna</div>
-      <p>Lenguaje nuevo. Importancia de la metáfora. Arte fuertemente deshumanizado.</p>
-    </div>
+    <div class="v-card"><h4>⚡ Futurismo</h4><div class="v-origin">Italia · Marinetti</div><p>Pasión por la velocidad. Supresión de puntuación, orden no lineal. Salinas o Alberti.</p></div>
+    <div class="v-card" style="border-top-color:var(--rust)"><h4>😱 Expresionismo</h4><div class="v-origin">Alemania</div><p>Carácter crítico y denuncia social. Valor a la imaginación. Valle-Inclán en España.</p></div>
+    <div class="v-card" style="border-top-color:var(--deep-blue)"><h4>🟦 Cubismo</h4><div class="v-origin">Picasso · Apollinaire</div><p>Diversos aspectos de la misma realidad. Caligramas. Guillermo de Torre.</p></div>
+    <div class="v-card" style="border-top-color:var(--gold)"><h4>🎲 Dadaísmo</h4><div class="v-origin">Rumanía · Tristan Tzara</div><p>Empezar de cero. Destruir todo. Humor y ridiculización de la poesía.</p></div>
+    <div class="v-card" style="border-top-color:#8b2020"><h4>💭 Surrealismo</h4><div class="v-origin">André Breton · Freud</div><p>Subconsciente y sueño. Escritura automática. <strong>Mayor impacto en España.</strong></p></div>
+    <div class="v-card" style="border-top-color:var(--muted)"><h4>🌊 Creacionismo / Ultraísmo</h4><div class="v-origin">España · Gerardo Diego · Gómez de la Serna</div><p>Lenguaje nuevo. Metáfora central. Arte fuertemente deshumanizado.</p></div>
+  </div>
+
+  <!-- QUIZ VANGUARDIAS -->
+  <div class="quiz-section">
+    <h3>🎯 Quiz — Vanguardias <span class="quiz-score" id="qvang-score">0 / 3</span></h3>
+    <div id="quizVang"></div>
   </div>
 </section>
-</div>
+</div></div>
 
 <div class="full-divider"></div>
 
-<!-- ═══════════════════════════════ GENERACIÓN DEL 27 ═══════════════ -->
+<!-- ══════════ GEN 27 ══════════ -->
 <div id="gen27"></div>
 <section>
   <div class="section-label">Tema 5</div>
   <h2>Generación del 27</h2>
-
   <div class="obra-block" style="margin-bottom:1.5rem">
     <h4>📖 Definición</h4>
     <p style="font-size:14px">Grupo de poetas españoles que alcanza la <strong>síntesis perfecta entre tradición literaria española y vanguardias europeas</strong>. Rigor formal, innovación estética y rehumanización progresiva. Nombre: homenaje a Góngora en su tricentenario (<strong>1927</strong>). Sin líder. Sin ruptura con la generación anterior.</p>
   </div>
-
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
-    <div class="obra-block">
-      <h4>⚖️ Rasgos estéticos — Equilibrio entre</h4>
-      <ul>
-        <li>Sentimientos ↔ Razón</li>
-        <li>Ingenio ↔ Trabajo</li>
-        <li>Lo culto ↔ Lo popular</li>
-        <li>Tradición ↔ Vanguardia</li>
-      </ul>
-    </div>
-    <div class="obra-block">
-      <h4>🔗 Cohesión del grupo</h4>
-      <ul>
-        <li>Formación intelectual semejante</li>
-        <li>No se alzan contra el 98</li>
-        <li>Pluralidad de estilos</li>
-        <li>Revistas literarias comunes</li>
-        <li>Actos y tertulias compartidas</li>
-      </ul>
-    </div>
+    <div class="obra-block"><h4>⚖️ Rasgos — Equilibrio entre</h4><ul><li>Sentimientos ↔ Razón</li><li>Ingenio ↔ Trabajo</li><li>Lo culto ↔ Lo popular</li><li>Tradición ↔ Vanguardia</li></ul></div>
+    <div class="obra-block"><h4>🔗 Cohesión del grupo</h4><ul><li>Formación intelectual semejante</li><li>No se alzan contra el 98</li><li>Pluralidad de estilos</li><li>Revistas literarias comunes</li><li>Actos y tertulias compartidas</li></ul></div>
   </div>
 
   <h3>Etapas</h3>
   <div class="gen27-etapas">
-    <div class="etapa-card">
-      <div class="etapa-num">1ª</div>
-      <div class="etapa-fecha">hasta 1927</div>
-      <p>Influencia de Bécquer, modernismo y vanguardias. Predominio de la <strong>poesía pura</strong> (deshumanización).</p>
-    </div>
-    <div class="etapa-card">
-      <div class="etapa-num">2ª</div>
-      <div class="etapa-fecha">1927 – 1936</div>
-      <p>Proceso de <strong>rehumanización</strong>. Temas humanos: amor, inquietudes existenciales, compromiso social.</p>
-    </div>
-    <div class="etapa-card">
-      <div class="etapa-num">3ª</div>
-      <div class="etapa-fecha">desde 1936</div>
-      <p>Disolución: fusilamiento de <strong>Lorca</strong>. Exilio de la mayoría. Temas: patria perdida o cuestiones existenciales.</p>
-    </div>
+    <div class="etapa-card"><div class="etapa-num">1ª</div><div class="etapa-fecha">hasta 1927</div><p>Bécquer, modernismo y vanguardias. <strong>Poesía pura</strong> (deshumanización).</p></div>
+    <div class="etapa-card"><div class="etapa-num">2ª</div><div class="etapa-fecha">1927 – 1936</div><p>Proceso de <strong>rehumanización</strong>. Amor, inquietudes existenciales, compromiso social.</p></div>
+    <div class="etapa-card"><div class="etapa-num">3ª</div><div class="etapa-fecha">desde 1936</div><p>Fusilamiento de <strong>Lorca</strong>. Exilio de la mayoría. Patria perdida o existencialismo.</p></div>
   </div>
 
   <h3 style="margin-top:2rem">Los poetas</h3>
   <div class="poetas27-grid">
-    <div class="poeta27-card">
-      <div class="p27-name">Pedro Salinas</div>
-      <div class="p27-lugar">Madrid · exilio</div>
-      <div class="p27-tema">Tema predominante: el <strong>amor</strong>. Lenguaje sencillo, busca la esencia.</div>
-      <div class="p27-obras">La voz a ti debida · Presagios</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Jorge Guillén</div>
-      <div class="p27-lugar">Valladolid · Premio Cervantes</div>
-      <div class="p27-tema">Satisfacción ante la realidad. Poesía pura y condensada. Obra unitaria <em>Aire nuestro</em>.</div>
-      <div class="p27-obras">Cántico · Clamor · Homenaje</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Gerardo Diego</div>
-      <div class="p27-lugar">Santander · Premio Cervantes</div>
-      <div class="p27-tema">Variedad técnica y temática. Perfecto uso de recursos retóricos.</div>
-      <div class="p27-obras">Manual de espumas · Romancero de la novia</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Dámaso Alonso</div>
-      <div class="p27-lugar">Madrid · dirigió la RAE</div>
-      <div class="p27-tema">De poesía pura a poesía existencial. Angustia e interrogación religiosa.</div>
-      <div class="p27-obras">Hijos de la ira</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Vicente Aleixandre</div>
-      <div class="p27-lugar">Sevilla · Premio Nobel</div>
-      <div class="p27-tema">Unión amor-muerte. Surrealismo → temas existenciales. Metáforas y versículos.</div>
-      <div class="p27-obras">La destrucción o el amor</div>
-    </div>
-    <div class="poeta27-card" style="border-top:3px solid #8b2020">
-      <div class="p27-name" style="color:#8b2020">Federico García Lorca ★</div>
-      <div class="p27-lugar">Granada · fusilado 1936</div>
-      <div class="p27-tema">Poesía y teatro. Equilibrio humano/puro, popular/culto. Teatro universal.</div>
-      <div class="p27-obras">Romancero gitano · Poeta en N.Y. · B. Alba</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Luis Cernuda</div>
-      <div class="p27-lugar">Sevilla · republicano · exilio</div>
-      <div class="p27-tema">Conflicto realidad/deseo. Poesía pura → surrealismo → estilo propio.</div>
-      <div class="p27-obras">La realidad y el deseo</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Rafael Alberti</div>
-      <div class="p27-lugar">Cádiz · Premio Cervantes</div>
-      <div class="p27-tema">Variedad: neopopular, barroca, cívica. Nostalgia por su tierra.</div>
-      <div class="p27-obras">Marinero en tierra · Cal y canto</div>
-    </div>
-    <div class="poeta27-card">
-      <div class="p27-name">Pablo Neruda</div>
-      <div class="p27-lugar">Chile · Premio Nobel 1971</div>
-      <div class="p27-tema">Amigo del 27. Romanticismo, mundo americano, autobiografía.</div>
-      <div class="p27-obras">Veinte poemas de amor…</div>
-    </div>
+    <div class="poeta27-card"><div class="p27-name">Pedro Salinas</div><div class="p27-lugar">Madrid · exilio</div><div class="p27-tema">Tema predominante: el <strong>amor</strong>. Lenguaje sencillo, sin rima.</div><div class="p27-obras">La voz a ti debida · Presagios · Confianza</div></div>
+    <div class="poeta27-card"><div class="p27-name">Jorge Guillén</div><div class="p27-lugar">Valladolid · Premio Cervantes</div><div class="p27-tema">Satisfacción ante la realidad. Poesía pura y condensada.</div><div class="p27-obras">Cántico · Clamor · Homenaje (obra unitaria: Aire nuestro)</div></div>
+    <div class="poeta27-card"><div class="p27-name">Gerardo Diego</div><div class="p27-lugar">Santander · Premio Cervantes</div><div class="p27-tema">Variedad técnica y temática. Creacionismo y poesía clásica.</div><div class="p27-obras">Manual de espumas · Romancero de la novia</div></div>
+    <div class="poeta27-card"><div class="p27-name">Dámaso Alonso</div><div class="p27-lugar">Madrid · dirigió la RAE · Premio Cervantes</div><div class="p27-tema">De poesía pura a existencial. Angustia e interrogación religiosa.</div><div class="p27-obras">Hijos de la ira</div></div>
+    <div class="poeta27-card"><div class="p27-name">Vicente Aleixandre</div><div class="p27-lugar">Sevilla · Premio Nobel</div><div class="p27-tema">Unión amor-muerte. Surrealismo → metafísica.</div><div class="p27-obras">La destrucción o el amor</div></div>
+    <div class="poeta27-card" style="border-top:3px solid #8b2020"><div class="p27-name" style="color:#8b2020">Federico García Lorca ★</div><div class="p27-lugar">Granada · fusilado 1936</div><div class="p27-tema">Poesía y teatro. Equilibrio popular/culto, humano/puro.</div><div class="p27-obras">Romancero gitano · Poeta en Nueva York · B. Alba · Sonetos del amor oscuro</div></div>
+    <div class="poeta27-card"><div class="p27-name">Luis Cernuda</div><div class="p27-lugar">Sevilla · republicano · exilio</div><div class="p27-tema">Conflicto realidad/deseo. Rechaza rima y ritmo marcado.</div><div class="p27-obras">La realidad y el deseo (obra unitaria)</div></div>
+    <div class="poeta27-card"><div class="p27-name">Rafael Alberti</div><div class="p27-lugar">Cádiz · Premio Cervantes</div><div class="p27-tema">Variedad: neopopular, barroca, cívica. Nostalgia por su tierra.</div><div class="p27-obras">Marinero en tierra · Cal y canto · Elegía cívica</div></div>
+    <div class="poeta27-card"><div class="p27-name">Emilio Prados</div><div class="p27-lugar">Málaga · fundador revista Litoral</div><div class="p27-tema">Tendencia a la interiorización.</div><div class="p27-obras">Fundó Litoral con Altolaguirre</div></div>
+    <div class="poeta27-card"><div class="p27-name">Manuel Altolaguirre</div><div class="p27-lugar">Málaga · fundador revista Litoral</div><div class="p27-tema">Conocerse y conocer el mundo.</div><div class="p27-obras">Fundó Litoral con Prados</div></div>
+    <div class="poeta27-card"><div class="p27-name">Pablo Neruda</div><div class="p27-lugar">Chile · Premio Nobel 1971</div><div class="p27-tema">Amigo del 27. Romanticismo, mundo americano, reflexión autobiográfica.</div><div class="p27-obras">Veinte poemas de amor…</div></div>
+  </div>
+
+  <!-- MATCH GAME GEN27 -->
+  <div class="quiz-section" style="margin-top:2.5rem">
+    <h3>🃏 Une poeta con su obra <span id="match27-score" style="font-size:12px;color:#aaa;margin-left:auto;font-family:'DM Mono',monospace">0 / 6</span></h3>
+    <p class="match-intro">Haz clic en un poeta y luego en su obra.</p>
+    <div class="match-cols" id="match27"></div>
+    <button class="quiz-btn" onclick="resetMatch27()">🔄 Reiniciar</button>
   </div>
 </section>
 
 <div class="full-divider"></div>
 
-<!-- ═══════════════════════════════ BERNARDA ALBA ═══════════════ -->
-<div id="bernarda" style="background:#f0e8da">
+<!-- ══════════ BERNARDA ══════════ -->
+<div id="bernarda" style="background:#f0e8da"><div style="background:#f0e8da">
 <section style="padding-top:4rem">
   <div class="section-label">Tema 6 · Obra</div>
   <h2>La casa de Bernarda Alba</h2>
-
   <div class="obra-hero">
     <h3>La casa de Bernarda Alba (1936)</h3>
     <div class="obra-autor">Federico García Lorca — Drama de mujeres en los pueblos de España</div>
-    <p>Bernarda, tras enterrar a su segundo marido, impone un luto de 8 años a sus 5 hijas. La represión del deseo, los celos y la tiranía desembocan en tragedia cuando Adela se suicida creyendo muerto a Pepe el Romano, su amante secreto.</p>
+    <p>Bernarda, tras enterrar a su segundo marido, impone un luto de 8 años a sus 5 hijas. La represión del deseo, los celos y la tiranía desembocan en tragedia cuando Adela se suicida creyendo muerto a Pepe el Romano.</p>
   </div>
-
   <div class="obra-grid">
-    <div class="obra-block">
-      <h4>🎭 Tema central</h4>
-      <ul>
-        <li><strong>Amor frustrado</strong> — el deseo reprimido</li>
-        <li><strong>Libertad vs. autoridad</strong> — el yugo de Bernarda</li>
-        <li><strong>Conflicto deseo/realidad</strong></li>
-        <li>Hipocresía social (la honra)</li>
-        <li>Injusticia social y marginación de la mujer</li>
-        <li>Odio, envidia, patriarcado</li>
-      </ul>
-    </div>
-    <div class="obra-block">
-      <h4>🏗️ Estructura</h4>
-      <ul>
-        <li>3 actos sin división escénica</li>
-        <li><strong>Acto I:</strong> fin de la mañana — presentación opresiva</li>
-        <li><strong>Acto II:</strong> siesta (3h) — pasión de Adela</li>
-        <li><strong>Acto III:</strong> noche — tragedia final</li>
-        <li>Espacio único: interior de la casa</li>
-        <li>Tiempo: un día de verano sofocante</li>
-      </ul>
-    </div>
+    <div class="obra-block"><h4>🎭 Temas</h4><ul>
+      <li><strong>Amor frustrado</strong> — el deseo reprimido</li>
+      <li><strong>Libertad vs. autoridad</strong> — el yugo de Bernarda</li>
+      <li>Conflicto deseo / realidad</li>
+      <li>Hipocresía social (la honra, las apariencias)</li>
+      <li>Injusticia social y marginación de la mujer</li>
+      <li>Odio, envidia, patriarcado</li>
+    </ul></div>
+    <div class="obra-block"><h4>🏗️ Estructura</h4><ul>
+      <li>3 actos sin división escénica explícita</li>
+      <li><strong>Acto I:</strong> fin de la mañana — ambiente opresivo</li>
+      <li><strong>Acto II:</strong> siesta (3h) — pasión de Adela</li>
+      <li><strong>Acto III:</strong> noche — tragedia final</li>
+      <li>Respeta las 3 unidades clásicas (espacio, tiempo, acción)</li>
+      <li>Tiempo: un día de verano sofocante</li>
+    </ul></div>
   </div>
 
   <h3>Personajes</h3>
   <div class="obra-block" style="margin-bottom:1rem">
-    <div class="personaje-row"><span class="personaje-nombre">Bernarda (60)</span><span>Tirana absoluta. Bastón de mando. Obsesión por el honor y las apariencias. Ni amor ni piedad.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Bernarda (60)</span><span>Tirana absoluta con bastón de mando. Obsesión por el honor. Sin amor ni piedad. Su nombre = fuerza del oso; Alba = blanco, apariencias.</span></div>
     <div class="personaje-row"><span class="personaje-nombre">Adela (20)</span><span>La más joven y hermosa. Rebeldía radical. Rompe el bastón de Bernarda. Se suicida al creer muerto a Pepe.</span></div>
     <div class="personaje-row"><span class="personaje-nombre">Martirio (24)</span><span>Fea y acomplejada. Enamorada de Pepe. Delata a Adela por celos. Su nombre es su destino.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">Angustias (39)</span><span>Mayor, heredera. La única a quien se permite cortejar. Matrimonio por conveniencia con Pepe.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">La Poncia (60)</span><span>Gobernanta. Fiel pero con odio contenido. La única que habla libremente del deseo. Avisa a Bernarda sin ser escuchada.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">Mª Josefa (80)</span><span>Abuela demente. Presagia la tragedia: «Pepe el Romano os va a devorar». Escapa de su cuarto.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">Pepe el Romano</span><span>Nunca aparece en escena pero lo mueve todo. Representa el falso amor y el deseo masculino.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Angustias (39)</span><span>Mayor y heredera. La única a quien se permite ser cortejada. Matrimonio de conveniencia con Pepe.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Magdalena (30)</span><span>La más reflexiva. Mayor afecto por el padre muerto. Llora en contra de la voluntad de Bernarda.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Amelia (27)</span><span>La más asustadiza y dulce de las cinco. Menos agresiva.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">La Poncia (60)</span><span>Gobernanta. Leal pero con odio contenido. La única que habla del deseo con ironía. Avisa a Bernarda sin ser escuchada.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Mª Josefa (80)</span><span>Abuela demente. Presagia la tragedia: «Pepe el Romano os va a devorar». Locura = única escapatoria.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Pepe el Romano</span><span>Nunca aparece en escena pero lo mueve todo. Falso amor. Lo desean Angustias (matrimonio), Martirio (amor) y Adela (deseo).</span></div>
   </div>
 
   <h3>Espacio y Simbolismo</h3>
-  <div class="obra-block" style="margin-bottom:1rem">
-    <h4>🏠 El espacio como cárcel</h4>
-    <p style="font-size:13px;margin-bottom:.8rem">La casa: paredes blancas, suelos barnizados. Blanco inmaculado ↔ negro del luto. <strong>Interior = opresión / Exterior = libertad.</strong> Salida solo por la locura (Mª Josefa) o la muerte (Adela). Las ventanas: única vía de entrada del deseo.</p>
-  </div>
   <div class="simbolo-grid">
-    <div class="simbolo-item"><strong>🌸 Flores</strong>Amor, pasión, rebeldía (flores de Adela)</div>
-    <div class="simbolo-item"><strong>🐴 Caballo garañón</strong>Deseo sexual, Pepe el Romano</div>
+    <div class="simbolo-item"><strong>🌸 Flores</strong>Amor, pasión, rebeldía</div>
+    <div class="simbolo-item"><strong>🐴 Caballo garañón</strong>Deseo sexual / Pepe el Romano</div>
     <div class="simbolo-item"><strong>💧 Agua (río/mar)</strong>Vida y erotismo cuando fluye</div>
-    <div class="simbolo-item"><strong>🕳️ Pozo</strong>Muerte, ilusiones estancadas</div>
+    <div class="simbolo-item"><strong>🕳️ Pozo</strong>Muerte e ilusiones estancadas</div>
     <div class="simbolo-item"><strong>🌙 Luna</strong>Muerte y erotismo</div>
     <div class="simbolo-item"><strong>☀️ Sol</strong>Vida y alegría</div>
-    <div class="simbolo-item"><strong>⬜ Blanco</strong>Libertad, honra (apariencias)</div>
-    <div class="simbolo-item"><strong>⬛ Negro</strong>Muerte, prisión, luto</div>
+    <div class="simbolo-item"><strong>⬜ Blanco</strong>Apariencias y honor (hipocresía)</div>
+    <div class="simbolo-item"><strong>⬛ Negro</strong>Luto, muerte, prisión</div>
     <div class="simbolo-item"><strong>🟢 Verde</strong>Rebeldía de Adela y muerte</div>
     <div class="simbolo-item"><strong>🦯 Bastón</strong>Poder y ceguera de Bernarda</div>
-    <div class="simbolo-item"><strong>🌾 Trigo (enaguas)</strong>Embarazo, fertilidad</div>
+    <div class="simbolo-item"><strong>🌾 Trigo (enaguas)</strong>Embarazo / fertilidad de Adela</div>
     <div class="simbolo-item"><strong>🐑 Oveja (Mª Josefa)</strong>Instinto maternal frustrado</div>
   </div>
 
-  <h3 style="margin-top:1.5rem">Lenguaje y características formales</h3>
-  <div class="obra-grid">
-    <div class="obra-block">
-      <h4>📏 Formal</h4>
-      <ul>
-        <li>Respeta las <strong>3 unidades clásicas</strong>: espacio, tiempo, acción</li>
-        <li>Diálogo brillante, intenso, cargado de simbolismo</li>
-        <li>Bernarda habla en <strong>imperativos</strong></li>
-        <li>Lenguaje familiar con figuras literarias exquisitas</li>
-      </ul>
-    </div>
-    <div class="obra-block">
-      <h4>🎨 Recursos destacados</h4>
-      <ul>
-        <li>Metáforas hiperbólicas («Siegan entre llamaradas»)</li>
-        <li>Comparaciones («dedos como cinco ganzúas»)</li>
-        <li>Animalización de personajes antipáticos</li>
-        <li>Paralelismos y contrastes constantes</li>
-        <li>Insultos y vulgarismos (Poncia)</li>
-      </ul>
-    </div>
+  <div class="mensaje-box" style="margin-top:1.5rem">
+    <p>🎯 <strong>Mensaje:</strong> La obra evidencia la tragedia del ser humano moderno: la existencia solitaria y la lucha vana contra lo inevitable. Las mujeres son heroínas condicionadas por causas sociales que les niegan la realización personal. El amor frustrado, la libertad aplastada y el deseo reprimido son universales humanos elevados a tragedia pura. Lorca cierra con la misma palabra que abre: <em>«¡Silencio!»</em></p>
   </div>
 
-  <div class="mensaje-box">
-    <p>🎯 <strong>Mensaje:</strong> La obra evidencia la tragedia del ser humano moderno: la existencia solitaria y la lucha vana contra lo inevitable. Las mujeres son heroínas condicionadas por causas sociales que les niegan la realización personal. El amor frustrado, la libertad aplastada y el deseo reprimido son universales humanos que Lorca eleva a tragedia pura.</p>
+  <!-- QUIZ BERNARDA -->
+  <div class="quiz-section" style="margin-top:2.5rem">
+    <h3>🎯 Quiz — Bernarda Alba <span class="quiz-score" id="qbernarda-score">0 / 4</span></h3>
+    <div id="quizBernarda"></div>
   </div>
 </section>
-</div>
+</div></div>
 
 <div class="full-divider"></div>
 
-<!-- ═══════════════════════════════ POSGUERRA ═══════════════ -->
+<!-- ══════════ POSGUERRA ══════════ -->
 <div id="posguerra"></div>
 <section>
   <div class="section-label">Tema 7</div>
   <h2>Literatura de Posguerra (1939–1975)</h2>
-
   <div class="obra-block" style="margin-bottom:1.5rem">
-    <h4>⚠️ Condicionantes del periodo</h4>
-    <p style="font-size:13px">La Guerra Civil (1936–1939) supone una <strong>ruptura total</strong> en la cultura española. Cuatro factores clave: <strong>aislamiento y censura</strong> (plácet eclesiástico y político), <strong>desaparición de los modelos</strong> (el 27 se disuelve), <strong>escasez editorial</strong> y <strong>tendencias escapistas o de exaltación</strong>.</p>
+    <h4>⚠️ Condicionantes</h4>
+    <p style="font-size:13px">La Guerra Civil (1936–1939) supone una <strong>ruptura total</strong> en la cultura española: <strong>aislamiento y censura</strong>, <strong>desaparición de los modelos</strong> (el 27 se disuelve), <strong>escasez editorial</strong> y <strong>tendencias escapistas o de exaltación</strong>.</p>
   </div>
 
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-decade">Literatura del exilio</div>
-      <h4>Los que marcharon</h4>
-      <p>Autores en Francia, México, EEUU. Temas: nostalgia de España y derrota republicana. Referentes: <strong>Ramón J. Sender</strong> (<em>Réquiem por un campesino español</em>), <strong>Francisco Ayala</strong> (<em>Los usurpadores</em>).</p>
+      <h4>Los que marcharon (Francia, México, EEUU)</h4>
+      <p>Nostalgia de España y derrota republicana. La Generación del 27 en el exilio: Salinas, Cernuda, Guillén, Alberti. Aleixandre y Dámaso Alonso permanecen en España.<br>
+      <strong>Autores a memorizar:</strong> Ramón J. Sender <span class="obra-tag">Crónica del alba</span><span class="obra-tag">Réquiem por un campesino español</span> · Francisco Ayala <span class="obra-tag">Los usurpadores</span> · Max Aub · León Felipe</p>
     </div>
     <div class="tl-item">
       <div class="tl-decade">Años 40 — Tremendismo</div>
       <h4>Realismo existencial y crudo</h4>
-      <p>Visión brutal de la realidad, ambientes sórdidos. La Generación del 27 se desintegra; solo Baroja conecta con los nuevos autores. Premio Nadal relanza el género. Autores: <strong>Cela, Laforet, Delibes, Matute</strong>.<br><span class="obra-tag" style="margin-top:.3rem;display:inline-block">La familia de Pascual Duarte (Cela)</span><span class="obra-tag">Nada (Laforet)</span></p>
+      <p>Visión brutal de la realidad, ambientes sórdidos. Solo Baroja conecta. Premio Nadal relanza el género.<br>
+      <strong>Autores:</strong> Camilo José Cela <span class="obra-tag">La familia de Pascual Duarte (1942)</span> · Carmen Laforet <span class="obra-tag">Nada (1945)</span> · Miguel Delibes <span class="obra-tag">La sombra del ciprés es alargada</span> · Ana María Matute <span class="obra-tag">Los Abel</span><br>
+      <em>Poesía desarraigada:</em> Blas de Otero · Gabriel Celaya</p>
     </div>
     <div class="tl-item blue">
       <div class="tl-decade">Años 50 — Realismo social</div>
-      <h4>Compromiso y denuncia</h4>
-      <p>Migraciones, incorporación a la ONU (1955), tímida liberalización. Objetivismo: narrador como cámara cinematográfica. Conductismo: solo conducta externa y diálogos. Autores: <strong>Sánchez Ferlosio, Goytisolo, Marsé, Matute</strong>.<br><span class="obra-tag" style="margin-top:.3rem;display:inline-block">El Jarama (Sánchez Ferlosio)</span><span class="obra-tag">La colmena (Cela)</span></p>
+      <h4>Compromiso y denuncia contenida</h4>
+      <p>Migraciones, ONU (1955), tímida liberalización. Objetivismo (narrador-cámara). Conductismo (solo conducta y diálogos).<br>
+      <strong>Autores:</strong> Rafael Sánchez Ferlosio <span class="obra-tag">El Jarama</span> · Camilo José Cela <span class="obra-tag">La colmena</span> · Miguel Delibes <span class="obra-tag">El camino</span> · Ignacio Aldecoa · Ana María Matute · Luis Goytisolo · Juan Goytisolo · Juan Marsé</p>
     </div>
     <div class="tl-item green">
       <div class="tl-decade">Años 60 — Renovación técnica</div>
       <h4>Experimentalismo y Boom hispanoamericano</h4>
-      <p>Cansancio del realismo social. Irrupción del <strong>Boom latinoamericano</strong>: García Márquez, Cortázar, Borges, Vargas Llosa. Novela experimental española: deconstrucción de personaje, tiempo y estructura.<br><span class="obra-tag" style="margin-top:.3rem;display:inline-block">Tiempo de silencio (Martín Santos, 1962)</span></p>
+      <p>Cansancio del realismo social. Revalorización de la forma. Irrupción del Boom.<br>
+      <strong>Españoles:</strong> Luis Martín Santos <span class="obra-tag">Tiempo de silencio (1962)</span> · Juan Goytisolo · Juan Marsé<br>
+      <strong>Boom hispanoamericano:</strong> Gabriel García Márquez · Julio Cortázar · Jorge Luis Borges · Mario Vargas Llosa · Ernesto Sábato</p>
     </div>
   </div>
 
-  <div class="obra-block">
-    <h4>📊 Corrientes en síntesis</h4>
-    <ul>
-      <li><strong>Tremendismo (40s):</strong> Cela inaugura con <em>La familia de Pascual Duarte</em>. Visión cruda, violenta, realismo oscuro.</li>
-      <li><strong>Objetivismo (50s):</strong> Narrador-cámara, solo hechos observables. Influencia de Baroja y Machado.</li>
-      <li><strong>Conductismo:</strong> Máximo objetivismo. Solo conducta y diálogos. Ej.: <em>El Jarama</em>.</li>
-      <li><strong>Realismo crítico (50s):</strong> Denuncia directa de desigualdades. Influencia norteamericana (generación perdida).</li>
-      <li><strong>Novela experimental (60s):</strong> Subjetivismo, lirismo, técnicas innovadoras.</li>
-    </ul>
+  <!-- FLIP CARDS POSGUERRA -->
+  <div class="quiz-section">
+    <h3>🃏 Autor → Obra · Flip cards</h3>
+    <p class="flip-intro">Haz clic en cada carta para ver la obra principal del autor.</p>
+    <div class="flip-grid" id="flipPostguerra"></div>
+    <p class="flip-hint">Clic para voltear ↩️</p>
+
+    <div style="margin-top:2rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem">
+    <h3 style="margin-bottom:1rem">🎯 Quiz — Corrientes literarias <span class="quiz-score" id="qpost-score">0 / 3</span></h3>
+    <div id="quizPost"></div>
+    </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ═══════════════════════════════ NADA ═══════════════ -->
+<!-- ══════════ NADA ══════════ -->
 <div id="nada"></div>
 <section>
   <div class="section-label">Tema 8 · Obra</div>
   <h2>Nada — Carmen Laforet</h2>
-
   <div class="obra-hero" style="border-left:4px solid var(--deep-blue)">
     <h3 style="color:#7ab0d4">Nada (1945)</h3>
-    <div class="obra-autor">Carmen Laforet (Barcelona, 1921 — Madrid, 2004) · Premio Nadal</div>
-    <p>Andrea llega a Barcelona para estudiar Filosofía y Letras y se instala en casa de sus abuelos en la calle Aribau. Lo que fue un hogar próspero es ahora un espacio deprimente habitado por personajes desequilibrados. Al final del curso, abandona Barcelona para irse a Madrid con su amiga Ena. Considerada <strong>novela de aprendizaje (Bildungsroman)</strong>.</p>
+    <div class="obra-autor">Carmen Laforet (Barcelona, 1921 — Madrid, 2004) · 1.er Premio Nadal</div>
+    <p>Andrea llega a Barcelona para estudiar Filosofía y Letras y se instala en casa de sus abuelos en la calle Aribau. Lo que fue un hogar próspero es ahora un espacio deprimente. Al final del curso, abandona Barcelona con su amiga Ena. Considerada <strong>novela de aprendizaje (Bildungsroman)</strong>. Título tomado de Juan Ramón Jiménez.</p>
   </div>
 
   <h3>Estructura</h3>
   <div class="nada-estructura">
-    <div class="parte-card">
-      <div class="parte-num">1ª</div>
-      <p>Oct.–Feb. Vida en calle Aribau. Ambiente opresivo. Fin: Angustias parte al convento.</p>
-    </div>
-    <div class="parte-card">
-      <div class="parte-num">2ª</div>
-      <p>Mar.–Jun. Apertura al exterior. Universidad, amistad con Ena y Pons. Tensiones crecientes.</p>
-    </div>
-    <div class="parte-card">
-      <div class="parte-num">3ª</div>
-      <p>Jul.–Sep. Pasado de la madre de Ena con Román. Román se suicida. Desenlace.</p>
-    </div>
+    <div class="parte-card"><div class="parte-num">1ª</div><p>Oct.–Feb. Calle Aribau. Ambiente opresivo. Fin: Angustias parte al convento.</p></div>
+    <div class="parte-card"><div class="parte-num">2ª</div><p>Mar.–Jun. Universidad, amistad con Ena y Pons. Tensiones familiares en aumento.</p></div>
+    <div class="parte-card"><div class="parte-num">3ª</div><p>Jul.–Sep. Pasado de Margarita con Román. Román se suicida. Andrea parte a Madrid.</p></div>
   </div>
 
   <div class="obra-grid">
-    <div class="obra-block">
-      <h4>💡 Temas</h4>
-      <ul>
-        <li><strong>Emancipación femenina</strong> — tema central</li>
-        <li>Lucha contra patrones sociales</li>
-        <li>Posguerra catalana y represión franquista</li>
-        <li>Violencia doméstica y trauma de la guerra</li>
-        <li>La amistad como salvación</li>
-        <li>Rechazo del matrimonio por conveniencia</li>
-      </ul>
-    </div>
-    <div class="obra-block">
-      <h4>👤 Narrador y Tiempo</h4>
-      <ul>
-        <li><strong>Homodiegético en 1ª persona:</strong> Andrea narra su historia desde un punto posterior</li>
-        <li>Actúa como observadora pasiva: «la chica rara»</li>
-        <li>Acción: curso académico <strong>1939–1940</strong></li>
-        <li>Analepsis y prolepsis frecuentes</li>
-        <li>Basada en experiencia de Laforet (no autobiográfica)</li>
-      </ul>
-    </div>
+    <div class="obra-block"><h4>💡 Temas</h4><ul>
+      <li><strong>Emancipación femenina</strong> — tema central y recurrente</li>
+      <li>Lucha contra patrones sociales</li>
+      <li>Represión franquista y posguerra catalana</li>
+      <li>Violencia doméstica y trauma de la Guerra Civil</li>
+      <li>La amistad como tabla de salvación</li>
+      <li>Rechazo del matrimonio romántico</li>
+    </ul></div>
+    <div class="obra-block"><h4>👤 Narrador y Tiempo</h4><ul>
+      <li><strong>Homodiegético en 1ª persona:</strong> Andrea narra desde un punto posterior</li>
+      <li>Observadora pasiva: «la chica rara»</li>
+      <li>Acción: curso académico <strong>1939–1940</strong></li>
+      <li>Analepsis (recuerdos previos a la guerra) y prolepsis</li>
+      <li>No autobiográfica, aunque basada en experiencias de Laforet</li>
+    </ul></div>
   </div>
 
-  <h3>Personajes principales</h3>
+  <h3>Personajes</h3>
   <div class="obra-block" style="margin-bottom:1rem">
-    <div class="personaje-row"><span class="personaje-nombre">Andrea</span><span>Protagonista y narradora. «La chica rara». Observadora pasiva, escasos datos físicos. Representación de la libertad buscada.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">Román (tío)</span><span>Figura oscura y manipuladora. El personaje masculino de mayor peso. Se suicida al final.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Andrea</span><span>Protagonista y narradora. «La chica rara». Observadora pasiva. Escasos datos físicos. Busca la libertad.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Román (tío)</span><span>Figura oscura y manipuladora. El personaje masculino de mayor peso. Violinista. Se suicida al final.</span></div>
     <div class="personaje-row"><span class="personaje-nombre">Juan</span><span>Hermano de Román. Más brutal y menos sofisticado. Violencia doméstica explícita.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">Ena</span><span>Amiga de la universidad. Salvavidas de Andrea. Pertenece al mundo exterior = libertad.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">Angustias (tía)</span><span>Represora moral. Parte al convento en la 1ª parte.</span></div>
-    <div class="personaje-row"><span class="personaje-nombre">La Abuela</span><span>Carácter benévolo en medio del caos. Símbolo del hogar destruido.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Ena</span><span>Amiga de la universidad. Salvavidas de Andrea. Mundo exterior = libertad y esperanza.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Angustias (tía)</span><span>Represora moral. Parte al convento al final de la 1ª parte.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">La Abuela</span><span>Carácter benévolo en medio del caos. Símbolo del hogar destruido por la guerra.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Gloria</span><span>Esposa de Juan. Víctima de la violencia doméstica. Juega a cartas en secreto.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Margarita</span><span>Madre de Ena. Tuvo una relación con Román en el pasado. Su historia se revela en la 3ª parte.</span></div>
+    <div class="personaje-row"><span class="personaje-nombre">Pons</span><span>Amigo universitario de Andrea. La introduce en el mundo burgués.</span></div>
   </div>
 
-  <h3>Forma y estilo</h3>
   <div class="obra-grid">
-    <div class="obra-block">
-      <h4>🖊️ Técnica narrativa</h4>
-      <ul>
-        <li><strong>Impresionismo:</strong> Andrea transmite percepción subjetiva, no realidad objetiva</li>
-        <li><strong>Expresionismo:</strong> deformación y animalización de personajes antipáticos</li>
-        <li>Prosa sencilla, natural, sobria</li>
-        <li>Diálogos que reflejan habla coloquial</li>
-        <li>Elusión narrativa: intrigas que no se resuelven del todo</li>
-      </ul>
-    </div>
-    <div class="obra-block">
-      <h4>🏙️ Espacio simbólico</h4>
-      <ul>
-        <li><strong>Casa Aribau</strong> = opresión, frustración, derrota</li>
-        <li><strong>Universidad / calle</strong> = libertad, esperanza</li>
-        <li>Barrio burgués ↔ barrio marginal</li>
-        <li>La ciudad adquiere valor simbólico</li>
-        <li>Barcelona = microcosmos de la posguerra</li>
-      </ul>
-    </div>
+    <div class="obra-block"><h4>🖊️ Técnica narrativa</h4><ul>
+      <li><strong>Impresionismo:</strong> percepción subjetiva de Andrea, no la realidad objetiva</li>
+      <li><strong>Expresionismo:</strong> animalización de personajes antipáticos</li>
+      <li>Prosa sencilla, natural y sobria</li>
+      <li>Diálogos que reflejan el habla coloquial</li>
+      <li>Elusión narrativa: intrigas sin resolver del todo</li>
+    </ul></div>
+    <div class="obra-block"><h4>🏙️ Espacio simbólico</h4><ul>
+      <li><strong>Casa Aribau</strong> = opresión, frustración, derrota</li>
+      <li><strong>Universidad / calle</strong> = libertad, esperanza</li>
+      <li>Espacios interiores ↔ exteriores</li>
+      <li>Barcelona = microcosmos de la posguerra española</li>
+      <li>La ciudad adquiere valor simbólico</li>
+    </ul></div>
   </div>
 
   <div class="mensaje-box" style="background:linear-gradient(135deg,#1a2030,#0f1525);border-left-color:var(--deep-blue)">
-    <p>🎯 <strong>Mensaje:</strong> <em>Nada</em> retrata la España de posguerra desde los ojos de una joven que busca su lugar en un mundo roto. La búsqueda de libertad e identidad femenina en un entorno hostil y patriarcal, el fracaso del sueño de una generación y la resiliencia a través de la amistad son sus ejes fundamentales. El título lo dice todo: al final, Andrea se va con «nada» material pero con todo lo que ha aprendido.</p>
+    <p>🎯 <strong>Mensaje:</strong> <em>Nada</em> retrata la España de posguerra desde una joven que busca su lugar en un mundo roto. Búsqueda de libertad e identidad femenina en un entorno hostil. El título lo dice todo: Andrea se va con «nada» material pero con todo lo aprendido. Un Bildungsroman donde la formación es el desencanto.</p>
   </div>
 
-  <blockquote style="margin-top:1.5rem">"Nada" — título tomado de Juan Ramón Jiménez, refleja el vacío moral y existencial de la España de posguerra.</blockquote>
+  <!-- QUIZ NADA -->
+  <div class="quiz-section" style="margin-top:2.5rem">
+    <h3>🎯 Quiz — Nada de Carmen Laforet <span class="quiz-score" id="qnada-score">0 / 4</span></h3>
+    <div id="quizNada"></div>
+  </div>
 </section>
 
 <footer>
@@ -1727,25 +1204,187 @@ el crimen fue en Granada, ¡en su Granada!</div>
 </footer>
 
 <script>
-function togglePoema(id) {
-  const card = document.getElementById(id);
-  card.classList.toggle('open');
+// ── TOGGLE POEMAS ──
+function togglePoema(id){
+  const c=document.getElementById(id);
+  c.classList.toggle('open');
 }
 
-// Highlight active nav on scroll
-const sections = document.querySelectorAll('[id]');
-const navLinks = document.querySelectorAll('nav a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 80;
-    if (window.scrollY >= sectionTop) current = section.id;
-  });
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-  });
+// ── NAV HIGHLIGHT ──
+const sections=document.querySelectorAll('[id]');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+  navLinks.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active')});
 });
+
+// ── QUIZ ENGINE ──
+function buildQuiz(containerId, scoreId, questions){
+  const container=document.getElementById(containerId);
+  const scoreEl=document.getElementById(scoreId);
+  let score=0;
+  container.innerHTML='';
+  questions.forEach((q,qi)=>{
+    const div=document.createElement('div');
+    div.className='quiz-q';
+    div.innerHTML=`<div class="q-text"><strong>P${qi+1}:</strong> ${q.q}</div><div class="quiz-options" id="opts-${containerId}-${qi}"></div><div class="quiz-feedback" id="fb-${containerId}-${qi}" style="display:none"></div>`;
+    container.appendChild(div);
+    const optsDiv=div.querySelector('.quiz-options');
+    q.opts.forEach((o,oi)=>{
+      const btn=document.createElement('button');
+      btn.className='quiz-opt';
+      btn.textContent=o;
+      btn.onclick=()=>{
+        const btns=optsDiv.querySelectorAll('.quiz-opt');
+        btns.forEach(b=>b.disabled=true);
+        const fb=document.getElementById(`fb-${containerId}-${qi}`);
+        if(oi===q.correct){
+          btn.classList.add('correct');
+          score++;
+          scoreEl.textContent=score+' / '+questions.length;
+          fb.className='quiz-feedback ok';
+          fb.textContent='✅ '+q.explanation;
+        } else {
+          btn.classList.add('wrong');
+          btns[q.correct].classList.add('correct');
+          fb.className='quiz-feedback fail';
+          fb.textContent='❌ Incorrecto. '+q.explanation;
+        }
+        fb.style.display='block';
+      };
+      optsDiv.appendChild(btn);
+    });
+  });
+  const resetBtn=document.createElement('button');
+  resetBtn.className='quiz-btn';
+  resetBtn.textContent='🔄 Reiniciar quiz';
+  resetBtn.onclick=()=>{score=0;scoreEl.textContent='0 / '+questions.length;buildQuiz(containerId,scoreId,questions)};
+  container.appendChild(resetBtn);
+}
+
+// ── QUIZ DATA ──
+const q98=[
+  {q:'¿Cuál fue el detonante histórico que unió a la Generación del 98?',opts:['La Primera Guerra Mundial','La pérdida de Cuba y Filipinas','La Revolución Industrial','La muerte de Alfonso XII'],correct:1,explanation:'El "Desastre del 98" —pérdida de las últimas colonias— fue el detonante que les unió.'},
+  {q:'¿Qué innovación de género literario creó Unamuno?',opts:['El esperpento','El tremendismo','La nivola','El calligrama'],correct:2,explanation:'Unamuno llamó "nivola" a sus novelas experimentales para diferenciarlas del género convencional.'},
+  {q:'¿Qué aspecto diferencia al Modernismo de la Generación del 98?',opts:['El Modernismo es más antiguo','El Modernismo tiene talante estético y el 98 ideológico','El 98 usa más recursos literarios','El Modernismo es solo poesía'],correct:1,explanation:'El Modernismo se centra en la forma (talante estético), el 98 en el contenido y el compromiso político-ideológico.'},
+  {q:'¿Cuál NO es un rasgo del Grupo del 98?',opts:['Actitud antiburguesa','Escepticismo y pesimismo','Exaltación del progreso tecnológico','Subjetivismo en el paisaje'],correct:2,explanation:'La exaltación del progreso tecnológico es propia del Futurismo. El 98 es más bien escéptico ante el progreso.'},
+];
+const qPoemas=[
+  {q:'¿A qué libro pertenece "Yo voy soñando caminos"?',opts:['Campos de Castilla','Soledades, galerías y otros poemas','Nuevas canciones','Poesías de guerra'],correct:1,explanation:'Pertenece a "Soledades, galerías y otros poemas" (1907), la etapa modernista de Machado.'},
+  {q:'¿Qué simboliza el olmo en "A un olmo seco"?',opts:['La decadencia de Castilla','La soledad del poeta','Leonor, la esposa enferma','La España tradicional'],correct:2,explanation:'El olmo viejo y enfermo pero con brotes verdes simboliza a Leonor, enferma de tuberculosis.'},
+  {q:'¿Qué tipo de estrofa usa el poema "Retrato"?',opts:['Redondillas','Silva-romance','Serventesios alejandrinos','Romance octosílabo'],correct:2,explanation:'Son 9 serventesios (ABAB) compuestos en versos alejandrinos de 14 sílabas (7+7).'},
+  {q:'¿Cuál es la figura retórica principal en "Una noche de verano"?',opts:['Hipérbole','Personificación de la Muerte','Ironía','Alegoría de España'],correct:1,explanation:'La Muerte se personifica: entra en casa, se acerca al lecho, rompe algo y pasa delante del poeta.'},
+];
+const qVang=[
+  {q:'¿Qué vanguardia tuvo mayor impacto en la literatura española?',opts:['Futurismo','Expresionismo','Surrealismo','Cubismo'],correct:2,explanation:'El Surrealismo, por su exploración del subconsciente, fue el movimiento de mayor influencia en España (Lorca, Cernuda, Alberti).'},
+  {q:'¿Con qué vanguardia se asocia Valle-Inclán?',opts:['Futurismo','Expresionismo','Dadaísmo','Creacionismo'],correct:1,explanation:'El Expresionismo, con su visión deformada y crítica de la realidad, se relaciona con el esperpento de Valle-Inclán.'},
+  {q:'¿Qué es un caligrama?',opts:['Un poema sin rima','Un poema cuya forma visual representa su contenido','Una novela corta de vanguardia','Un manifiesto artístico'],correct:1,explanation:'El caligrama (asociado al Cubismo y a Apollinaire) es un poema donde las palabras forman una imagen visual relacionada con el tema.'},
+];
+const qBernarda=[
+  {q:'¿Cuántos años de luto impone Bernarda a sus hijas?',opts:['3 años','5 años','8 años','10 años'],correct:2,explanation:'Bernarda declara un luto de 8 años para ella y sus cinco hijas tras la muerte de su segundo marido.'},
+  {q:'¿Qué acción de Adela simboliza su rebelión máxima?',opts:['Escaparse por la ventana','Romper el bastón de mando de Bernarda','Escribir una carta a Pepe','Negarse a ponerse de negro'],correct:1,explanation:'Adela rompe el bastón de Bernarda, símbolo del poder y la autoridad tiránica, en el punto álgido de su rebelión.'},
+  {q:'¿Qué color viste Adela en señal de rebeldía?',opts:['Rojo','Azul','Verde','Blanco'],correct:2,explanation:'Adela viste de verde, en contra del negro del luto impuesto. El verde en Lorca simboliza la rebeldía y también la muerte.'},
+  {q:'¿Qué personaje presagia la tragedia con sus palabras?',opts:['La Poncia','Angustias','María Josefa (la abuela)','Prudencia'],correct:2,explanation:'María Josefa, la abuela demente de 80 años, presagia la tragedia: «Pepe el Romano os va a devorar».'},
+];
+const qPost=[
+  {q:'¿Qué corriente literaria inaugura Cela con "La familia de Pascual Duarte" (1942)?',opts:['Objetivismo','Tremendismo','Realismo mágico','Conductismo'],correct:1,explanation:'Cela inaugura el tremendismo: visión cruda y brutal de la realidad con ambientes rurales sórdidos.'},
+  {q:'¿Qué técnica define el "conductismo" narrativo de los años 50?',opts:['El narrador omnisciente que lo sabe todo','El narrador solo registra conducta externa y diálogos','El uso de la primera persona','El monólogo interior'],correct:1,explanation:'El conductismo (máximo objetivismo) registra solo la conducta externa y los diálogos, sin entrar en los pensamientos de los personajes. Ejemplo cumbre: El Jarama.'},
+  {q:'¿En qué año se incorpora España a la ONU, impulsando una tímida liberalización?',opts:['1945','1950','1955','1962'],correct:2,explanation:'España se incorporó a la ONU en 1955, lo que trajo cambios socioeconómicos y una cierta apertura intelectual que impulsó el realismo social.'},
+];
+const qNada=[
+  {q:'¿Qué tipo de novela es "Nada" según su estructura narrativa?',opts:['Novela río','Bildungsroman (novela de aprendizaje)','Novela epistolar','Novela de aventuras'],correct:1,explanation:'Nada es una Bildungsroman o novela de aprendizaje: narra el crecimiento personal de Andrea durante un curso académico.'},
+  {q:'¿De quién toma Carmen Laforet el título "Nada"?',opts:['De Unamuno','De Antonio Machado','De Juan Ramón Jiménez','De Valle-Inclán'],correct:2,explanation:'El título proviene de Juan Ramón Jiménez, de cuya obra también se toma la cita inicial de la novela.'},
+  {q:'¿Cuál es la técnica narrativa principal de Andrea en "Nada"?',opts:['Narrador omnisciente en 3ª persona','Narrador homodiegético en 1ª persona','Narrador conductista sin comentarios','Flujo de conciencia'],correct:1,explanation:'Andrea es narradora homodiegética: cuenta su propia historia desde un punto posterior, con distancia reflexiva.'},
+  {q:'¿Qué espacio simboliza la opresión y la frustración en "Nada"?',opts:['La universidad','La calle Barcelona','La casa de la calle Aribau','El barrio marginal'],correct:2,explanation:'La casa de la calle Aribau, con su ambiente deprimente y sus personajes desequilibrados, simboliza la opresión y la derrota de posguerra.'},
+];
+
+// ── BUILD ALL QUIZZES ──
+buildQuiz('quiz98','q98-score',q98);
+buildQuiz('quizPoemas','qpoemas-score',qPoemas);
+buildQuiz('quizVang','qvang-score',qVang);
+buildQuiz('quizBernarda','qbernarda-score',qBernarda);
+buildQuiz('quizPost','qpost-score',qPost);
+buildQuiz('quizNada','qnada-score',qNada);
+
+// ── FLIP CARDS POSGUERRA ──
+const flipData=[
+  {autor:'Camilo José Cela',obra:'La familia de Pascual Duarte (1942)\nInaugura el tremendismo'},
+  {autor:'Carmen Laforet',obra:'Nada (1945)\n1.er Premio Nadal'},
+  {autor:'Miguel Delibes',obra:'La sombra del ciprés es alargada\nEl camino'},
+  {autor:'Ana María Matute',obra:'Los Abel · Primera memoria\nRealismo social y existencial'},
+  {autor:'Rafael Sánchez Ferlosio',obra:'El Jarama (1956)\nConductismo puro'},
+  {autor:'Ramón J. Sender',obra:'Réquiem por un campesino español\nCrónica del alba (exilio)'},
+  {autor:'Luis Martín Santos',obra:'Tiempo de silencio (1962)\nInaugura el experimentalismo'},
+  {autor:'Juan Goytisolo',obra:'Señas de identidad\nNovelas prohibidas por la censura'},
+  {autor:'Francisco Ayala',obra:'Los usurpadores\nLiteratura del exilio'},
+  {autor:'Juan Marsé',obra:'Si te dicen que caí\nNovelas prohibidas por la censura'},
+  {autor:'Ignacio Aldecoa',obra:'El fulgor y la sangre\nRealismo social años 50'},
+  {autor:'Luis Goytisolo',obra:'Las afueras\nGeneración del medio siglo'},
+];
+const fg=document.getElementById('flipPostguerra');
+flipData.forEach((d,i)=>{
+  const card=document.createElement('div');
+  card.className='flip-card';
+  card.innerHTML=`<div class="flip-inner">
+    <div class="flip-front"><div class="f-label">Autor</div><div class="f-title">${d.autor}</div></div>
+    <div class="flip-back"><div class="b-text">${d.obra.replace(/\n/g,'<br>')}</div></div>
+  </div>`;
+  card.onclick=()=>card.classList.toggle('flipped');
+  fg.appendChild(card);
+});
+
+// ── MATCH GAME GEN 27 ──
+const matchPairs=[
+  {poet:'Pedro Salinas',work:'La voz a ti debida'},
+  {poet:'Jorge Guillén',work:'Cántico'},
+  {poet:'Dámaso Alonso',work:'Hijos de la ira'},
+  {poet:'Vicente Aleixandre',work:'La destrucción o el amor'},
+  {poet:'Rafael Alberti',work:'Marinero en tierra'},
+  {poet:'Luis Cernuda',work:'La realidad y el deseo'},
+];
+let matchSelected=null;
+let matchScore27=0;
+function buildMatch27(){
+  const container=document.getElementById('match27');
+  const poets=[...matchPairs].sort(()=>Math.random()-.5);
+  const works=[...matchPairs].sort(()=>Math.random()-.5);
+  container.innerHTML=`
+    <div>
+      <h5>Poetas</h5>
+      ${poets.map(p=>`<div class="match-item" data-type="poet" data-key="${p.poet}" onclick="matchClick(this)">${p.poet}</div>`).join('')}
+    </div>
+    <div>
+      <h5>Obras</h5>
+      ${works.map(p=>`<div class="match-item" data-type="work" data-key="${p.poet}" onclick="matchClick(this)">${p.work}</div>`).join('')}
+    </div>`;
+}
+function matchClick(el){
+  if(el.classList.contains('matched'))return;
+  if(!matchSelected){
+    document.querySelectorAll('.match-item.selected').forEach(x=>x.classList.remove('selected'));
+    el.classList.add('selected');
+    matchSelected=el;
+  } else {
+    if(matchSelected===el){el.classList.remove('selected');matchSelected=null;return;}
+    if(matchSelected.dataset.key===el.dataset.key && matchSelected.dataset.type!==el.dataset.type){
+      matchSelected.classList.remove('selected');
+      matchSelected.classList.add('matched');
+      el.classList.add('matched');
+      matchScore27++;
+      document.getElementById('match27-score').textContent=matchScore27+' / 6';
+      matchSelected=null;
+    } else {
+      matchSelected.classList.remove('selected');
+      el.classList.add('wrong');
+      matchSelected.classList.add('wrong');
+      setTimeout(()=>{el.classList.remove('wrong');matchSelected&&matchSelected.classList.remove('wrong');matchSelected=null;},500);
+      matchSelected=null;
+    }
+  }
+}
+function resetMatch27(){matchScore27=0;document.getElementById('match27-score').textContent='0 / 6';buildMatch27();matchSelected=null;}
+buildMatch27();
 </script>
 </body>
 </html>
